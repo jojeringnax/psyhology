@@ -6,4 +6,5 @@
  * Time: 14:44
  * To change this template use File | Settings | File Templates.
  */
-echo '<div class="modalQuestBody">'.$question->questionBody.'</div>';
+echo '<div class="modal-header">'.$question->questionBody.'</div>';
+echo '<div class="modal-body">'.$question->answerBody.'</div>';

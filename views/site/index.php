@@ -8,7 +8,6 @@ use yii\bootstrap\Modal;
 use yii\helpers\Url;
 ?>
 <?php Modal::begin([
-    'header' => 'Просмотр вопросика',
     'id' => 'modalQuest',
 ]); ?>
 
