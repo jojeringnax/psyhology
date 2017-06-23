@@ -42,10 +42,10 @@ $(document).ready( function() {
             url: 'question/view?id='+$(this).data('id'),
             dataType: 'html',
             error: function(xhr, textStatus) {
-                console.log([ xhr.status, textStatus ]);
+                $('#modalQuest > .modal-content > .modal-body').html([ xhr.status, textStatus ]);
             },
             success: function(data) {
-                console.log(data);
+                $('#modalQuest > .modal-content > .modal-body').html(data);
             }
         });
     });
