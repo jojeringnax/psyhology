@@ -22,13 +22,10 @@ class QuestionController extends Controller
     {
         $id = \Yii::$app->request->get('id');
 
-        $question = Question::find()->where(['id' => $id])->all();
+        $question = Question::findOne($id);
 
-        if(empty($post)) throw new \yii\web\HttpException(404, 'Такой страницы, наверное, нет');
+        if(empty($question)) throw new \yii\web\HttpException(404, 'Такой страницы, наверное, нет');
 
-        return $this->render('view', [
-            'id' => $id,
-            'question' => $question,
-        ]);
+        return $this->render('view', compact('question'));
     }
 }
