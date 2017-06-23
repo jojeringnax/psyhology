@@ -24,6 +24,7 @@ class QuestionController extends Controller
         $question = Question::findOne($id);
 
         return $this->renderPartial('view', [
+            'id' => $id,
             'question' => $question,
         ]);
     }

@@ -5,6 +5,7 @@ use app\models\Postviews;
 echo '<pre>';
 print_r($post);
 echo '</pre>';
+echo $id;
 ?>
 
 

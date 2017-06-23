@@ -33,6 +33,7 @@ class PostController extends Controller
 		if(empty($post)) throw new \yii\web\HttpException(404, 'Такой страницы, наверное, нет');
 
 		return $this->render('view', [
+            'id' => $id,
 			'comment' => $comment,
 			'post' => $post,
 		]);

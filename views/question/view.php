@@ -10,3 +10,4 @@
 echo '<pre>';
 print_r($question);
 echo '</pre>';
+echo $id;
