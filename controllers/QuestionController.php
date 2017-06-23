@@ -14,7 +14,7 @@ class QuestionController extends Controller
      */
     public function actionIndex()
     {
-        $questions = Question::find()->select('id, title')->all();
+        $questions = Question::find()->select('id, questionBody')->all();
         return $this->render('index', compact('questions'));
     }
 
