@@ -12,7 +12,7 @@ use yii\helpers\Url;
     'id' => 'modalQuest',
 ]); ?>
 
-<?php $this->render('/question/view', [
+<?php $this->renderAjax('/question/view', [
     'question' => $question,
 ]); ?>
 
