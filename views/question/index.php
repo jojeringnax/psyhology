@@ -6,4 +6,6 @@
  * Time: 14:34
  * To change this template use File | Settings | File Templates.
  */
-print_r($questions);
+foreach($questions as $quest):
+    echo($quest->id);
+endforeach;
