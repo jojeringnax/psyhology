@@ -3,14 +3,13 @@
 /* @var $this yii\web\View */
 
 $this->title = 'Блог Светланы Пейда';
+
+use Yii;
 use yii\bootstrap\Modal;
 use yii\helpers\Url;
 use app\models\Quest;
-
 ?>
-
-
-		<div class="container-fluid">
+<div class="container-fluid">
 			<div class="row">
 				<div class="col-xs-6 col-sm-6 col-md-2 col-lg-2 postHeaderImg">
 					<img src="img/postHeaderImg.png" width="100%" />
