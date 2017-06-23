@@ -134,6 +134,7 @@ class SiteController extends Controller
 					'posts' => $posts,
 					'quests' => $quests,
                     'activities' => $activities,
+                    'question' => $question,
 			]);
 	}
 
