@@ -7,4 +7,4 @@
  * To change this template use File | Settings | File Templates.
  */
 
-print_r($question->answerBody);
+print_r($question);
