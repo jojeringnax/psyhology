@@ -159,6 +159,7 @@ use yii\helpers\Url;
 
                         <?php $this->renderAjax('question\view', [
                             'question' => $question,
+                            'id' => 'modalQuest',
                         ]); ?>
 
                         <?php Modal::end(); ?>
@@ -189,8 +190,8 @@ use yii\helpers\Url;
 													$answBody = $quest->answerBody;
 												}
 												echo '<div class="halfForQuest"><span style="display: block; text-align: left; font-weight: bold; height: 45px; margin-top: 20px;"><i>ВОПРОС-ОТВЕТ:</i></span><div class="questionBody">'.$questBody.'</div>
-												<div class="answerBody">'.$answBody.'</div><div class="linkToQuest"><a class="moreAboutQuest" href='.Url::to(['question/view', 'id' => $quest->id]).'>Далее...</a></div></div>';
-											}
+												<div class="answerBody">'.$answBody.'</div><div class="linkToQuest"><a class="moreAboutQuest" data-target="modalQuest" data-toggle="modal" href='.Url::to(['question/view', 'id' => $quest->id]).'>Далее...</a></div></div>';
+                                            }
 										endforeach ?>
 									</div>
                                 </div>
