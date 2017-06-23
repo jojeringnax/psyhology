@@ -39,7 +39,15 @@ $(document).ready( function() {
 
     $('.moreAboutQuest').click( function() {
         $.ajax({
-            url: 'question/view'
+            url: 'question/view',
+            data: 'id',
+            dataType: 'json',
+            error: function() {
+                console.log('Всё плохо!');
+            },
+            success: function() {
+                console.log($(this).data());
+            }
         });
     });
 });

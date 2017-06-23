@@ -26,8 +26,10 @@ class QuestionController extends Controller
 
             $question = Question::findOne($id);
 
+            if(empty($question)) {echo 'Посмотрите что-то еще!';}
+
             return $this->renderPartial('view', [
-                'question' => $id,
+                'question' => $question,
             ]);
         }
     }
