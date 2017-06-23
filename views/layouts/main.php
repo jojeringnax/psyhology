@@ -27,7 +27,7 @@ AppAsset::register($this);
 		<link rel="stylesheet" href="/css/style.css" />
 		<title><?= Html::encode($this->title) ?></title>
 		<script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
-		<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="/js/bootstrap.js"></script>
 		<script type="text/javascript" src="/js/questions.js"></script>
 		<script type="text/javascript" src="/js/library.js"></script>
 		<script type="text/javascript" src="/js/main.js"></script>
