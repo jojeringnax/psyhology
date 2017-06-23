@@ -1,0 +1,573 @@
+
+
+	/* 
+
+	ФОРМА ПОИСКА СВЕРХУ
+
+	*/
+
+.headerInputSubmit {
+	filter: alpha(opacity=50);
+	width: 30%;
+	background: none;
+	background-size: contain;
+	position: absolute;
+	right: 0;
+	border: none;
+	height: calc(100% - 5px);
+	top: 2.5px;
+	padding: 0;
+}
+
+#searchform-q {
+	width: 0;
+	padding: 5px 0 5px 0;
+}
+
+div.loop > form > .headerInputSubmit:hover {
+	filter: alpha(opacity=80);
+}
+
+div.loop > form {
+	position: relative;
+	float: left;
+	width: 0;
+}
+
+/* 
+
+САМЫЙ ВЕРХ СТРАНИЦЫ
+
+*/
+
+.headerText {
+	text-align: center;
+	font-size: 32px;
+	color: white;
+}
+
+.headerLoop {
+	float: left;
+}
+
+.headerLoop:hover {
+	cursor: pointer;
+}
+
+.headerText > a {
+	color: white;
+}
+
+.headerText > a:hover {
+	text-decoration: none;
+}
+
+.navbar, .navbar-default, .navbar-collapse {
+	text-align: center;
+	background-color: transparent;
+}
+
+/* 
+
+КАЛЕНДАРЬ
+
+*/
+
+.monthName {
+	height: 15%;
+	width: 100%;
+	color: #6a9984;
+	font-size: 32px;
+}
+
+.calendBody {
+	height: 85%;
+	width: 100%;
+}
+.b-calendar__tb {
+	width: 100%;
+	height: 100%;
+	font-size: 20px;
+}
+
+.b-calendar__head {
+	font-size: 20px;
+}
+	
+.b-calendar__weekend__name {
+	color: #d24a43;
+}
+
+.b-calendar__np {
+	color: #aaa;
+}
+
+.specialDay {
+	color: red;
+	position: relative;
+}
+
+.description {
+	position: absolute;
+	font-size: 12px;
+	height: 20px;
+	width: 200px;
+	background-color: olive;
+	display: none;
+	z-index: 331;
+	border-bottom: 1px solid black;
+}
+
+.description > a {
+	color: black;
+}
+
+.description > a:hover {
+	text-decoration: none;
+}
+
+/* 
+
+ПОСТЫ МОЗАИКА
+
+*/
+
+.posts {
+	overflow: scroll;
+}
+
+.postRow {
+	height: 188px;
+	margin: 12px 0 12px 0;
+}
+
+div.post, .postImg {
+	float: left;
+	height: 100%;
+	position: relative;
+	margin-left: 12px;
+}
+
+.small {
+	width: calc(14% - 12px);	
+}
+
+div.small > img {
+	margin-left: 0;
+	width: 100%;
+}
+
+.large {
+	width: calc(24% - 12px);
+	
+}
+
+.newTypeWrapper {
+	height: 20px;
+	margin-left: 6px;
+}
+
+.postNew {
+	color: red;
+	width: 10%;
+	text-align: left;
+	height: 20px;
+}
+
+.postTitle {
+	text-align: right;
+	margin-right:0;
+	margin-left: auto;
+	width: 70%;
+	min-height: 48px;
+	overflow: hidden;
+	font-style: italic;
+	font-weight: bold;
+	font-size: 11px;
+}
+
+.postImg:hover {
+	cursor: pointer;
+}
+
+.postTitle > a {
+	color: black;
+}
+
+.postTypeImg {
+	margin-bottom: 0;
+	margin-top: auto;
+}
+
+.postType {
+	text-align: left;
+}
+
+
+
+.postNew {
+	font-style: italic;
+	font-weight: bold;
+}
+
+div.postContent {
+	width: 80%;
+	text-align: left;
+	margin: 10px;
+	color: white;
+	text-align: justify;
+	position: relative;
+	overflow: hidden;
+}
+
+.large > .postTitle {
+	margin-right: 10px;
+}
+
+.small > .postTitle {
+	margin-right: 8px;
+}
+
+
+.postViews, .postCommentsQuan {
+	width: 50%;
+	height: 20px;
+	float: left;
+	font-size: 14px;
+	color: #b65243;
+}
+
+
+.postCommentsQuan > img, .postViews > img {
+	height: 16px;
+
+	margin-right: 10px;
+}
+
+.postBody {
+	margin-left: 60px;
+	margin-right: 100px;
+	text-align: justify;
+}
+
+/* 
+
+ПОСТЫ СОЛО НА СТРАНИЦАХ
+
+*/
+
+.postTitleSolo {
+	margin: 30px 0 20px 0;
+}
+
+.postTitleSolo > h3 {
+	font-size: 38px;
+}
+
+	/* 
+
+	КОММЕНТАРИИ
+
+	*/
+
+.empty {
+	margin-top: 20px;
+	font-style: italic;
+}
+
+
+.commentWrapper {
+	text-align: left;
+	margin-bottom: 24px;
+	font-size: 12px;
+	color: #777;
+}
+
+.commentBody {
+	margin-top: 6px;
+	font-size: 14px;
+	color: black;
+	text-align: left;
+}
+
+.commentEmail {
+	float: left;
+	color: #aaa;
+}
+
+.commentNick {
+	float: left;
+	font-size: 13px;
+}
+
+.commentTimestamp {
+	float: left;
+}
+
+.site-comments {
+	margin-left: 60px;
+	margin-right: 100px;
+	text-align: left;
+	padding: 15px;
+}
+
+.site-comments > div {
+	text-align: left;
+}
+
+/* 
+
+ВОПРОСЫ СЛАЙДЕР
+
+*/
+
+.questions {
+	font-size: 32px;
+	position: relative;
+	height: 250px;
+	font-weight: 100;
+}
+
+.questions > span {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+}
+
+.questions > span:hover {
+	cursor: pointer;
+}
+
+.questions > img{
+	position: absolute;
+	right: 0;
+	top: 25px;
+	margin-right: 10px;
+}
+
+.questions2 {
+	display: table-cell;
+	height: 250px;
+	vertical-align: middle;
+}
+
+.questions2 > span {
+	vertical-align: middle;
+}
+
+.questForm {
+	background-color: #b5b7b9;
+	width: 100%;
+	position: absolute;
+	z-index: 331;
+	border: 3px white double;
+	top: 250px;
+	display: none;
+}
+
+div.has-error > div.help-block {
+	font-size: 18px;
+}
+
+/* 
+
+ВОПРОСЫ-ФОРМА ДЛЯ ЗАДАВАНИЯ ВОПРОСА
+
+*/
+
+#questionform-questioneremail, #questionform-questionername {
+	width: 70%;
+	margin: 0 auto;
+}
+#questionform-questionbody {
+	width: 90%;
+	max-width: 90%;
+	margin: 0 auto;
+}
+
+.field-questionform-questionbody {
+	text-align: left;
+}
+
+.help-block {
+	height: 25px;
+}
+
+.field-questionform-questionbody > label {
+	font-size: 18px;
+	width: 100%;
+	margin-left: 5%;
+	color: white;
+	text-align: left;
+}
+
+.questionSubmit {
+	background-color: #201600;
+	color: white;
+	font-style: italic;
+	font-size: 14px;
+	border: none;
+	width: 100px;
+	height: 40px;
+	margin-bottom: 20px;
+}
+
+
+.questionBody {
+	text-align: left;
+	font-weight: bold;
+	font-style: italic;
+	height: 80px;
+}
+
+.answerBody {
+	text-align: left;
+	font-style: italic;
+	height: 40px;
+}
+
+.linkToQuest {
+	text-align: right;
+}
+
+.moreAboutQuest {
+	height: 25px;
+	color: red;
+	font-weight: 100;
+	font-style: italic;
+}
+
+.moreAboutQuest:hover {
+	color: red;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.halfForQuest {
+	float: left;
+}
+
+.overlay {
+	padding: 0;
+	margin: 0;
+}
+
+.questArrow {
+	height: 100px;
+	margin-top: 75px;
+	display: none;
+}
+
+.questArrow:hover {
+	cursor: pointer;
+}
+
+.sliderQuest {
+	height: 250px;
+}
+
+/* 
+
+БИБЛИОТЕКА
+
+*/
+
+.libraryWord {
+	font-size: 32px;
+	text-align: left;
+	margin: 10px 0 8px 16px;
+}
+
+.libraryInput {
+	width: 80%;
+	float: inherit;	
+}
+
+.libraryLoop {
+	width: 10%;
+	float: right;
+	margin-top: 4px;
+}
+
+.library > span {
+	display: block;
+	text-align: center;
+	width: 100%;
+}
+
+.library > span#name {
+	font-size: 28px;
+}
+
+.library > span#A-Z {
+	font-size: 40px;
+	font-weight: bold;
+	color: #6b6966;
+}
+
+.library {
+	padding-top: 25px;
+}
+
+
+/* 
+
+АНОНСЫ
+
+*/
+
+.anounce > span > h1 {
+	font-size: 32px;
+	font-weight: 300;
+}
+
+
+.activityTime {
+	color: #d24a43;
+	font-weight: 700;
+}
+
+.activities {
+	margin-top: 30px;
+}
+
+
+.activityContent {
+	color: black;
+	font-weight: 700;
+	text-align: left;
+}
+
+/* 
+
+АРХИВ ВЕБИНАРОВ
+
+*/
+
+.archive > span > h2 {
+	font-size: 24px;
+	font-weight: 200;
+}
+
+
+	/* 
+
+	РЕЗУЛЬТАТЫ ПОИСКА
+
+	*/
+
+
+.postResult > .post {
+	font-size: 14px;
+	overflow: hidden;
+}
+
+.result {
+	height: auto;
+}
+
+div.loop > form > input {
+	float: left;
+	padding: 0;	
+	border: none;
+}
