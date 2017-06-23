@@ -6,6 +6,4 @@
  * Time: 14:34
  * To change this template use File | Settings | File Templates.
  */
-foreach ($questions as $quest):
-    echo $quest->questionTimeStamp;
-endforeach;
+print_r($questions);
