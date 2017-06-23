@@ -20,7 +20,7 @@ class QuestionController extends Controller
 
     public function actionView()
     {
-        $question = Question::find(Yii::$app->request->get());
+        $question = Question::findOne(Yii::$app->request->get());
         return $this->render('view', [
             'question' => $question,
         ]);
