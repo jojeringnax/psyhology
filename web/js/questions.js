@@ -41,12 +41,12 @@ $(document).ready( function() {
         $.ajax({
             url: 'question/view',
             data: 'id',
-            dataType: 'json',
+            dataType: 'html',
             error: function(xhr, textStatus) {
                 console.log([ xhr.status, textStatus ]);
             },
-            success: function() {
-                console.log($(this).data());
+            success: function(data) {
+                console.log(data);
             }
         });
     });
