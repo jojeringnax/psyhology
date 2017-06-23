@@ -39,8 +39,7 @@ $(document).ready( function() {
 
     $('.moreAboutQuest').click( function() {
         $.ajax({
-            url: 'question/view',
-            data: 'id',
+            url: 'question/view?id='+$(this).data('id'),
             dataType: 'html',
             error: function(xhr, textStatus) {
                 console.log([ xhr.status, textStatus ]);
