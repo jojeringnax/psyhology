@@ -2,7 +2,9 @@
 $this->title = $post->title;
 
 use app\models\Postviews;
-
+echo '<pre>';
+print_r($post);
+echo '</pre>';
 ?>
 
 
