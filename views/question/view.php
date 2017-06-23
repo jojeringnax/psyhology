@@ -1,10 +1,4 @@
-<?php
-/**
- * Created by JetBrains PhpStorm.
- * User: Ilusha
- * Date: 23.06.17
- * Time: 14:44
- * To change this template use File | Settings | File Templates.
- */
-echo '<div class="modal-header">'.$question->questionBody.'</div>';
-echo '<div class="modal-body">'.$question->answerBody.'</div>';
+<div class="quetModalWrapper">
+    <div class="modal-header"><i><?= $question->questionBody ?></i></div>;
+    <div class="modal-body"><b>Ответ:</b><br /><?= $question->answerBody ?></div>;
+</div>
