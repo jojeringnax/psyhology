@@ -7,6 +7,16 @@ $this->title = 'Блог Светланы Пейда';
 use yii\bootstrap\Modal;
 use yii\helpers\Url;
 ?>
+<?php Modal::begin([
+    'header' => 'Просмотр вопросика',
+    'id' => 'modalQuest',
+]); ?>
+
+<?php $this->renderAjax('/question/view', [
+    'question' => $question,
+]); ?>
+
+<?php Modal::end(); ?>
 <div class="container-fluid">
 			<div class="row">
 				<div class="col-xs-6 col-sm-6 col-md-2 col-lg-2 postHeaderImg">
@@ -154,16 +164,7 @@ use yii\helpers\Url;
 
 
 						</div>
-                        <?php Modal::begin([
-                            'header' => 'Просмотр вопросика',
-                            'id' => 'modalQuest',
-                        ]); ?>
 
-                        <?php $this->renderAjax('/question/view', [
-                            'question' => $question,
-                        ]); ?>
-
-                        <?php Modal::end(); ?>
 						<img src="img/questions.png" height="200" />
 					</div>
 				</div>
