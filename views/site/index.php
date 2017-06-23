@@ -5,6 +5,8 @@
 $this->title = 'Блог Светланы Пейда';
 use yii\bootstrap\Modal;
 use yii\helpers\Url;
+use app\models\Quest;
+
 ?>
 
 
@@ -155,11 +157,13 @@ use yii\helpers\Url;
 
 
 						</div>
-                        <?php Modal::begin(); ?>
+                        <?php Modal::begin([
+                            'header' => 'Просмотр вопросика',
+                            'id' => 'modalQuest',
+                        ]); ?>
 
                         <?php $this->renderAjax('question\view', [
-                            'question' => $question,
-                            'id' => 'modalQuest',
+                            'question' => Quest::findOne(Yii::$app->request->get('id')),
                         ]); ?>
 
                         <?php Modal::end(); ?>
