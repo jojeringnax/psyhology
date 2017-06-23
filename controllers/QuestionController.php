@@ -22,14 +22,14 @@ class QuestionController extends Controller
     {
         if (Yii::$app->request->isAjax) {
 
-            $id = Yii::$app->request->getIsAjax('id');
+            $id = Yii::$app->request->getIsAjax();
 
             $question = Question::findOne($id);
 
             if(empty($question)) {echo 'Посмотрите что-то еще!';}
 
             return $this->renderPartial('view', [
-                'question' => $question,
+                'question' => $id,
             ]);
         }
     }
