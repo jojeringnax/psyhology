@@ -4,10 +4,9 @@
 
 $this->title = 'Блог Светланы Пейда';
 
-use Yii;
 use yii\bootstrap\Modal;
 use yii\helpers\Url;
-use app\models\Quest;
+use app\models\Question;
 ?>
 <div class="container-fluid">
 			<div class="row">
@@ -162,7 +161,7 @@ use app\models\Quest;
                         ]); ?>
 
                         <?php $this->renderAjax('question\view', [
-                            'question' => Quest::findOne(Yii::$app->request->get('id')),
+                            'question' => Question::findOne(Yii::$app->request->get('id')),
                         ]); ?>
 
                         <?php Modal::end(); ?>
