@@ -37,5 +37,10 @@ $(document).ready( function() {
 		$('.questArrow').fadeOut('300');
 	});
 
-
+    $('.moreAboutQuest').click( function() {
+        console.log('$falfkjmakjfnjhsdnfgjhbsdjhgfbj0');
+        $.ajax({
+            url: 'question/view',
+        });
+    });
 });
