@@ -38,9 +38,6 @@ $(document).ready( function() {
 	});
 
     $('.moreAboutQuest').click( function() {
-        $('#modalQuest > .modal-dialog > .modal-content').html('');
-        $.ajax({
-            url: 'question/view/' + $(this).data('id')
-        });
+        console.log($(this).data('id'));
     });
 });
