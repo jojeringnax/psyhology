@@ -4,14 +4,14 @@ namespace app\controllers;
 
 use Yii;
 use yii\web\Controller;
-use yii\filters\AccessControl;
-use yii\helpers\Html;
-use yii\filters\VerbFilter;
 use app\models\Post;
 use app\models\CommentForm;
 
 class PostController extends Controller
 {
+    /**
+     * @inheritdoc
+     */
 	public function actionIndex()
 	{
 		$posts = Post::find()->select('id, title')->all();

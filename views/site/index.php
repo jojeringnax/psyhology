@@ -3,7 +3,7 @@
 /* @var $this yii\web\View */
 
 $this->title = 'Блог Светланы Пейда';
-use yii\widgets\Pjax;
+use yii\bootstrap\Modal;
 ?>
 
 
@@ -152,7 +152,16 @@ use yii\widgets\Pjax;
 								<?= $form->field($questionForm, 'questionBody')->textarea(['rows' => 2, 'cols' => 5])->label('Ваш вопрос:*'); ?>
 								<?= Html::submitButton('Отправить', ['class' => 'questionSubmit']) ?>
 								<?php ActiveForm::end(); ?>
+
+
 						</div>
+                        <?php Modal::begin([
+                            'header' => 'Hi everyone',
+                        ]);?>
+                        <= $this->renderAjax('question\view', [
+                        'question' => $question,
+                        ]); ?>
+                        <?php Modal::end(); ?>
 						<img src="img/questions.png" height="200" />
 					</div>
 				</div>
@@ -180,7 +189,7 @@ use yii\widgets\Pjax;
 													$answBody = $quest->answerBody;
 												}
 												echo '<div class="halfForQuest"><span style="display: block; text-align: left; font-weight: bold; height: 45px; margin-top: 20px;"><i>ВОПРОС-ОТВЕТ:</i></span><div class="questionBody">'.$questBody.'</div>
-												<div class="answerBody">'.$answBody.'</div><div class="linkToQuest"><a class="moreAboutQuest">Далее...</a></div></div>';
+												<div class="answerBody">'.$answBody.'</div><div class="linkToQuest"><a class="moreAboutQuest" href='.Url::to(['question/view', 'id' => $question->id].'>Далее...</a></div></div>';
 											}
 										endforeach ?>
 									</div>
