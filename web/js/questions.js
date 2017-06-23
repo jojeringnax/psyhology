@@ -40,7 +40,7 @@ $(document).ready( function() {
     $('.moreAboutQuest').click( function() {
         $('#modalQuest > .modal-dialog > .modal-content').html('');
         $.ajax({
-            url: 'question/view'
+            url: 'question/view/' + $(this).data('id')
         });
     });
 });
