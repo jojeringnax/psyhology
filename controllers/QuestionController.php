@@ -18,10 +18,8 @@ class QuestionController extends Controller {
 
     public function ActionIndex()
     {
-        $questions = Question::findAll('1');
-        return $this->render('index', [
-            'questions' => $questions,
-        ]);
+        $questions = Question::find()->all();
+        return $this->render('index', compact('questions'));
     }
 
     public function ActionView()
