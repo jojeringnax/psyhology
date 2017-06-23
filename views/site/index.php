@@ -240,7 +240,7 @@ use app\models\Question;
             </div>
         </div>
         <div class="col-xs-12 col=sm-12 col-md-5 col-lg-5 anounce">
-            <span><h1>АНОНСЫ МЕРОПРИЯТИЙ</h1></span>
+            <h1><span>АНОНСЫ МЕРОПРИЯТИЙ</span></h1>
             <div class="activities">
 					<?php
 						foreach ($activities as $activity):
