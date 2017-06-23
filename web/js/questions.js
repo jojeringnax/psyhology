@@ -42,7 +42,7 @@ $(document).ready( function() {
             url: 'question/view',
             data: 'id',
             dataType: 'json',
-            error: function() {
+            error: function(xhr, textStatus) {
                 console.log([ xhr.status, textStatus ]);
             },
             success: function() {
