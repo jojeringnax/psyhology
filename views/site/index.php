@@ -161,7 +161,7 @@ use app\models\Question;
                         ]); ?>
 
                         <?php $this->renderAjax('/question/view', [
-                            'question' => Question::findOne(\Yii::$app->request->get('id')),
+                            'question' => Question::findOne(5),
                         ]); ?>
 
                         <?php Modal::end(); ?>
