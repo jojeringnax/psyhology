@@ -7,4 +7,5 @@
  * To change this template use File | Settings | File Templates.
  */
 echo '<pre>';
+echo $question->id;
 echo '</pre>';
