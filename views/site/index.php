@@ -160,9 +160,7 @@ use app\models\Question;
                             'id' => 'modalQuest',
                         ]); ?>
 
-                        <?php $this->renderAjax('/question/view', [
-                            'question' => Question::findOne(Yii::$app->request->get('id')),
-                        ]); ?>
+                        <?php $this->renderAjax('/question/view'); ?>
 
                         <?php Modal::end(); ?>
 						<img src="img/questions.png" height="200" />
