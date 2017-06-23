@@ -22,7 +22,7 @@ class QuestionController extends Controller
     {
         if (Yii::$app->request->isAjax) {
 
-            $id = Yii::$app->request->getIsAjax();
+            $id = Yii::$app->request->get('id');
 
             $question = Question::findOne($id);
 
