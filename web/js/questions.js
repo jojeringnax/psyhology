@@ -38,7 +38,7 @@ $(document).ready( function() {
 	});
 
     $('.moreAboutQuest').click( function() {
-        console.log('$falfkjmakjfnjhsdnfgjhbsdjhgfbj0');
+        $('#modalQuest > .modal-dialog > .modal-content').html('');
         $.ajax({
             url: 'question/view'
         });
