@@ -1,9 +1,7 @@
 <?php
 
 namespace app\models;
-
-use Yii;
-
+use \yii\db\ActiveRecord;
 /**
  * This is the model class for table "question".
  *
@@ -15,32 +13,25 @@ use Yii;
  * @property string $answerTimeStamp
  * @property string $answerBody
  */
-class Question extends \yii\db\ActiveRecord
+
+class Question extends ActiveRecord
 {
-       /**
-     * @inheritdoc
-     */
+
     public  static function tableName()
     {
         return 'question';
     }
 
-    /**
-     * @inheritdoc
-     */
     public function rules()
     {
-    return [
-       [['questionerEmail', 'questionBody'], 'required'],
-        [['questionerEmail', 'questionBody', 'answerBody'], 'string'],
-        [['questionTimeStamp', 'answerTimeStamp'], 'safe'],
-        [['questionerName'],'string','max' => 64],
-    ];
+        return [
+           [['questionerEmail', 'questionBody'], 'required'],
+            [['questionerEmail', 'questionBody', 'answerBody'], 'string'],
+            [['questionTimeStamp', 'answerTimeStamp'], 'safe'],
+            [['questionerName'],'string','max' => 64],
+        ];
     }
 
-    /**
-     * @inheritdoc
-     */
     public function attributeLabels()
     {
         return [

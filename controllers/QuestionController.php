@@ -21,10 +21,13 @@ class QuestionController extends Controller
     public function actionView()
     {
         $id = \Yii::$app->request->get('id');
+
         $question = Question::findOne($id);
 
-        return $this->renderPartial('view', [
-            'ahah' => $id,
+        if(empty($post)) throw new \yii\web\HttpException(404, 'Такой страницы, наверное, нет');
+
+        return $this->render('view', [
+            'id' => $id,
             'question' => $question,
         ]);
     }

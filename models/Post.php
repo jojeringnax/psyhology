@@ -13,6 +13,7 @@ use yii\db\ActiveRecord;
  * @property integer $views
  * @property integer $commentsQuan
  */
+
 class Post extends ActiveRecord
 {
 
