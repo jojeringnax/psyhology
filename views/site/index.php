@@ -15,8 +15,9 @@ use yii\helpers\Url;
 				</div>
 				<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 postHeaderText">
 					
-					<p><h1>ЧТО Я ПРЕДЛАГАЮ?</h1></p>
-					<p>Предлагаю выносить внутренний мусор</p>
+					<h1>ЧТО Я ПРЕДЛАГАЮ?</h1>
+
+                    <p>Предлагаю выносить внутренний мусор</p>
 					<p>Чиню заборы личностных границ</p>
 					<p>Снимаю непомерную ношу</p>
 					<p>Убираю грабли из-под ног</p>
@@ -24,7 +25,7 @@ use yii\helpers\Url;
 				</div>
 				<div class="hidden-xs hidden-sm col-md-1 col-lg-1"></div>
 				<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-					<p><h1>А ЕСЛИ СЕРЬЕЗНО...</h1></p>
+					<h1>А ЕСЛИ СЕРЬЕЗНО...</h1>
 					<p>У каждой нашей проблемы есть причина. Как говорят, "иногда это не наша вина, а наша беда". Если Вы больше не можете страдать, не получая желаемого результата, если Вы сказали себе: "Я так больше не могу!" - значит Ваша душа готова для изменений.<br />Я тоже прошла большой путь. Я сказала себе - Хватит! И у меня большой опыт. И далеко не сразу я нашла то, что искала. Решив свои проблемы, я научилась помогать другим.</p>
 					<p>А теперь помогу Вам...</p>
 				</div>
@@ -130,9 +131,7 @@ use yii\helpers\Url;
 									<div class="postCommentsQuan"><img src="/img/pic/comment.png" /><?php echo($post->commentsQuan);?></div>
 								</div>
 								<?php
-								}
-								?>
-						<?php endforeach; ?>
+								} endforeach; ?>
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-12 hidden-md hidden-lg" style="height: 400px; background-color: #eee;">
@@ -156,12 +155,12 @@ use yii\helpers\Url;
 
 
 						</div>
-                        <?php Modal::begin([
-                            'header' => 'Hi everyone',
-                        ]);?>
-                        <= $this->renderAjax('question\view', [
-                        'question' => $question,
+                        <?php Modal::begin(); ?>
+
+                        <?php $this->renderAjax('question\view', [
+                            'question' => $question,
                         ]); ?>
+
                         <?php Modal::end(); ?>
 						<img src="img/questions.png" height="200" />
 					</div>
@@ -194,75 +193,75 @@ use yii\helpers\Url;
 											}
 										endforeach ?>
 									</div>
-								</div>
-							<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 rightQuest"><img class="questArrow right" src="/img/pic/right.png" /></div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="container-fluid">
-			<div class="row" style="background-color: #afaeae; height: 150px; padding: 5px 0 5px 0;">
-				<form>
-					<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-						<div class="libraryWord"><span class="libraryWord">БИБЛИОТЕКА</span></div>
-						<input class="libraryInput" type="text" name="query" />
-						<input type="submit" value="" style="display: none;" />
-						<img class="libraryLoop" src="img/loop" />
-					</div>
-				</form>
-				<div class="hidden-xs hidden-sm col-md-2 col-lg-2 library">
-					<span id="name">КНИГИ</span>
-					<span id="A-Z">А - Я</span>
-				</div>
-				<div class="hidden-xs hidden-sm col-md-1 col-lg-1"></div>
-				<div class="hidden-xs hidden-sm col-md-2 col-lg-2 library">
-					<span id="name">СТАТЬИ</span>
-					<span id="A-Z">А - Я</span>
-				</div>
-				<div class="hidden-xs hidden-sm col-md-1 col-lg-1"></div>
-				<div class="hidden-xs hidden-sm col-md-2 col-lg-2 library">
-					<span id="name">ПРОЧЕЕ</span>
-					<span id="A-Z">А - Я</span>
-				</div>
-			</div>
-		</div>
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-					<div class="calendar hidden-xs hidden-sm" style="width: 80%; height: 300px; margin: 0 auto; margin-top: 40px;">
-						<div class="monthName">Июнь</div>
-						<div class="calendBody">
+                                </div>
+                            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 rightQuest"><img class="questArrow right" src="/img/pic/right.png" /></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="container-fluid">
+    <div class="row" style="background-color: #afaeae; height: 150px; padding: 5px 0 5px 0;">
+        <form>
+            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                <div class="libraryWord"><span class="libraryWord">БИБЛИОТЕКА</span></div>
+                <input class="libraryInput" type="text" name="query" />
+                <input type="submit" value="" style="display: none;" />
+                <img class="libraryLoop" src="img/loop" />
+            </div>
+        </form>
+        <div class="hidden-xs hidden-sm col-md-2 col-lg-2 library">
+            <span id="name">КНИГИ</span>
+            <span id="A-Z">А - Я</span>
+        </div>
+        <div class="hidden-xs hidden-sm col-md-1 col-lg-1"></div>
+        <div class="hidden-xs hidden-sm col-md-2 col-lg-2 library">
+            <span id="name">СТАТЬИ</span>
+            <span id="A-Z">А - Я</span>
+        </div>
+        <div class="hidden-xs hidden-sm col-md-1 col-lg-1"></div>
+        <div class="hidden-xs hidden-sm col-md-2 col-lg-2 library">
+            <span id="name">ПРОЧЕЕ</span>
+            <span id="A-Z">А - Я</span>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+            <div class="calendar hidden-xs hidden-sm" style="width: 80%; height: 300px; margin: 0 auto; margin-top: 40px;">
+                <div class="monthName">Июнь</div>
+                <div class="calendBody">
 							<?php echo draw_calendar(7, 2017, $fillSpaces = true, $specials = $arraySpecials); ?>
 						</div>
-					</div>
-				</div>
-				<div class="col-xs-12 col=sm-12 col-md-5 col-lg-5 anounce">
-					<span><h1>АНОНСЫ МЕРОПРИЯТИЙ</h1></span>
-					<div class="activities">
-					<?php 
+            </div>
+        </div>
+        <div class="col-xs-12 col=sm-12 col-md-5 col-lg-5 anounce">
+            <span><h1>АНОНСЫ МЕРОПРИЯТИЙ</h1></span>
+            <div class="activities">
+					<?php
 						foreach ($activities as $activity):
 							echo '<div class="row"><div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 activityTime">'.strftime("%V.%m.%Y",strtotime($activity->eventTime)).'</div><div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 activityContent">'.$activity->description.'</div></div>';
 						endforeach;
 					?>
 					</div>
-				</div>
-				<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-					<div class="row" style="background-color: #eee; margin-top: 10px;">
-						<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3"></div>
-						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-							<img src="img/login.png" width="100%" />
-							<span style="color: #495275;">комната вебинара</span>
-						</div>
-						<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3"></div>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 archive" style="background-color: #e5e6e7;">
-					<span><h2 style="text-decoration: none; font-style: normal;">АРХИВ ВЕБИНАРОВ<h2></span>
-				</div>
-			</div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+            <div class="row" style="background-color: #eee; margin-top: 10px;">
+                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3"></div>
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    <img src="img/login.png" width="100%" />
+                    <span style="color: #495275;">комната вебинара</span>
+                </div>
+                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3"></div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 archive" style="background-color: #e5e6e7;">
+            <span><h2 style="text-decoration: none; font-style: normal;">АРХИВ ВЕБИНАРОВ<h2></span>
+        </div>
+    </div>
 		</div>
 		<div class="container-fluid">
 			<div class="row">
