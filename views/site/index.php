@@ -160,7 +160,7 @@ use app\models\Question;
                             'id' => 'modalQuest',
                         ]); ?>
 
-                        <?php $this->renderAjax('/question/view',[
+                        <?php $this->renderAjax('/question/view', [
                             'question' => Question::findOne(\Yii::$app->request->get('id')),
                         ]); ?>
 

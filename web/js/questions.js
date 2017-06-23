@@ -40,7 +40,7 @@ $(document).ready( function() {
     $('.moreAboutQuest').click( function() {
         console.log('$falfkjmakjfnjhsdnfgjhbsdjhgfbj0');
         $.ajax({
-            url: 'question/view',
+            url: 'question/view'
         });
     });
 });
