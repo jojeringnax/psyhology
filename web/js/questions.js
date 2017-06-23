@@ -46,6 +46,7 @@ $(document).ready( function() {
             },
             success: function(data) {
                 $('#modalQuest > .modal-dialog > .modal-content > .modal-body').html(data);
+                $('#modalQuest > .modal-dialog > .modal-content > .modal-header').html('<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>' + $('#modalQuest > .modal-dialog > .modal-content > .modal-body > .modalQuestBody').html());
             }
         });
     });
