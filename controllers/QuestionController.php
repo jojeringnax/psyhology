@@ -20,7 +20,7 @@ class QuestionController extends Controller
 
     public function actionView()
     {
-        $question = Question::findOne(Yii::$app->request->get());
+        $question = Question::findOne(Yii::$app->request->get('id'));
         return $this->renderPartial('view', [
             'question' => $question,
         ]);
