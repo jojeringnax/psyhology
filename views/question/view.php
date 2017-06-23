@@ -7,7 +7,5 @@
  * To change this template use File | Settings | File Templates.
  */
 echo '<pre>';
-foreach ($question as $q):
-    echo $q->id;
-endforeach;
+echo $question->id;
 echo '</pre>';
