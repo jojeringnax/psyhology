@@ -4,6 +4,7 @@
 
 $this->title = 'Блог Светланы Пейда';
 use yii\bootstrap\Modal;
+use yii\helpers\Url;
 ?>
 
 
@@ -123,7 +124,7 @@ use yii\bootstrap\Modal;
 										</div>
 										<div class="postType" data-type=<?= Html::encode("{$post->type}") ?>></div>
 									</div>
-									<div class="postTitle"><a href="<?= yii\helpers\Url::to(['post/view', 'id' => $post->id]) ?>"><?= $post->title ?></a></div>
+									<div class="postTitle"><a href="<?= Url::to(['post/view', 'id' => $post->id]) ?>"><?= $post->title ?></a></div>
 									<div class="postContent"><?= substr($post->content, 0, strpos($post->content, ' ', 150)); ?></div>
 									<div class="postViews"><img src="/img/pic/views.png" /><?php echo($post->views); ?></div>
 									<div class="postCommentsQuan"><img src="/img/pic/comment.png" /><?php echo($post->commentsQuan);?></div>
