@@ -7,5 +7,5 @@
  * To change this template use File | Settings | File Templates.
  */
 echo '<pre>';
-print_r($question);
+$question->id;
 echo '</pre>';
