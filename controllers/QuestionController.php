@@ -29,6 +29,13 @@ class QuestionController extends Controller
                 return $this->renderPartial('view', [
                     'question' => $question,
                 ]);
+        } else {
+            $id = Yii::$app->request->get('id');
+            $question = Question::findOne($id);
+            if(empty($question)) {throw new \yii\web\HttpException(404, 'Такой страницы, наверное, нет');}
+            return $this->renderPartial('view', [
+                'question' => $question,
+            ]);
         }
     }
 }
