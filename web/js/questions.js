@@ -43,7 +43,7 @@ $(document).ready( function() {
             data: 'id',
             dataType: 'json',
             error: function() {
-                console.log('Всё плохо!');
+                console.log([ xhr.status, textStatus ]);
             },
             success: function() {
                 console.log($(this).data());
