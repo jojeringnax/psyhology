@@ -110,8 +110,12 @@ use yii\widgets\ActiveForm;
 <div class="container-fluid">
 <?php echo '<div class="h3">Вопросы, найдено '.count($questions).':</div>'; ?>
 	<div class="row questions result">
-
 	<?php
+    $questContent = '
+        <div class="questionBody result">' . $question->questionBody . '</div>
+        <div class="answerBody question">' . $question->answerBody . '</div>
+        </div>
+        ';
 	$countQuests = count($questions);
 	if ($countQuests > 12) {
         $resultRows = floor(count($posts) / 12) + 1;
@@ -126,11 +130,7 @@ use yii\widgets\ActiveForm;
         $classes = bootstrapClassesSearch($countQuests);
         foreach($questions as $question): {
             if ($resultRows) {
-                echo '<div class="col-lg-2 col-md-2 col-sm-6 col-xs-6 question" style="height: 100%; margin-top:12px;" >
-                    <div class="questionBody result">' . $question->questionBody . '</div>
-                    <div class="answerBody question">' . $question->answerBody . '</div>
-                </div>
-                ';
+                echo '<div class="col-lg-2 col-md-2 col-sm-6 col-xs-6 question" style="height: 100%; margin-top:12px;" >'.$questContent;
                 $j++;
                 if ($j == 6) {
                     $resultRows--;
@@ -138,11 +138,8 @@ use yii\widgets\ActiveForm;
                     echo '</div><div class="row questionRow">';
                 }
             } else {
-                echo '<div class="col-lg-'.$classes[$i].' col-md-'.$classes[$i].' col-sm-6 col-xs-6 question" style="height: 100%; margin-top:12px;" >
-                    <div class="questionBody result">' . $question->questionBody . '</div>
-                    <div class="answerBody question">' . $question->answerBody . '</div>
-                </div>
-                ';
+                echo '<div class="col-lg-'.$classes[$i].' col-md-'.$classes[$i].' col-sm-6 col-xs-6 question" style="height: 100%; margin-top:12px;" >'.
+                    $questContent;
                 $i++;
             }
         };
