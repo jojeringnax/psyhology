@@ -16,7 +16,6 @@ use yii\widgets\ActiveForm;
 	<div class="row postFind">
 		<?php $form = ActiveForm::begin([
 				'validateOnType' => true,
-				'action' => 'index.php',
 				'method' => 'get',
 				'options' => ['data' => ['pjax' => true]],
 			]); ?>
