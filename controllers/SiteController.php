@@ -72,57 +72,51 @@ class SiteController extends Controller
 	 
 	public function actionResult()
 	{
-		$searchForm = new SearchForm;
+		if (Yii::$app->request->get()) {
+            $posts = Post::find()->andFilterWhere([
+                'or',
+                ['LIKE','title', Yii::$app->request->get('SearchForm[q]')],
+                ['LIKE','content', Yii::$app->request->get('SearchForm[q]')],
+            ])->all();
+            $questions = Question::find()->andFilterWhere([
+                'and',
+                ['LIKE','questionBody', Yii::$app->request->get('SearchForm[q]')],
+                'answerBody is not null',
+            ])->all();
+            return $this->render('result', [
+                'posts' => $posts,
+                'questions' => $questions,
+            ]);
+        }
 		
 		if ($searchForm->load(Yii::$app->request->get())) {
-			$posts = Post::find()->andFilterWhere([
-				'or',
-				['LIKE','title', $searchForm->q],
-				['LIKE','content', $searchForm->q],
-				])->all();
-			$questions = Question::find()->andFilterWhere([
-				'and',
-				['LIKE','questionBody', $searchForm->q],
-				'answerBody is not null',
-				])->all();
-			return $this->render('result', [
-				'posts' => $posts,
-				'questions' => $questions,
-			]);
-		}
-		
+            $posts = Post::find()->andFilterWhere([
+                'or',
+                ['LIKE', 'title', $searchForm->q],
+                ['LIKE', 'content', $searchForm->q],
+            ])->all();
+            $questions = Question::find()->andFilterWhere([
+                'and',
+                ['LIKE', 'questionBody', $searchForm->q],
+                'answerBody is not null',
+            ])->all();
+            return $this->render('result', [
+                'posts' => $posts,
+                'questions' => $questions,
+            ]);
+        }
 	}
 	
 	
     public function actionIndex()
     {
         $signupForm = new SignupForm;
-		$searchForm = new SearchForm;
 		$questionForm = new QuestionForm;
 		$question = new Question;
         $request = Yii::$app->request;
         
         if ($signupForm->load($request->post()) && $signupForm->post() || $questionForm->load($request->post()) && $questionForm->post()) {
             return $this->refresh();
-        }
-		
-		if ($searchForm->load(Yii::$app->request->get())) {
-			$posts = Post::find()->andFilterWhere([
-				'or',
-				['LIKE','title', $searchForm->q],
-				['LIKE','content', $searchForm->q],
-				])->all();
-			$questions = Question::find()->andFilterWhere([
-				'and',
-				['LIKE','questionBody', $searchForm->q],
-				'answerBody is not null',
-				])->all();
-			return $this->render('result', [
-				'posts' => $posts,
-				'questions' => $questions,
-                'searchForm' => $searchForm,
-			]);
-			
 		}		
 		
 		$posts = Post::find()->orderBy('id')->all();
