@@ -1,5 +1,5 @@
 <div class="questModalWrapper">
-    <div class="modal-header"><b><i><?= $question->questionBody ?></i></b></div>
+    <div class="modal-header" style="text-align: left;"><b><i><?= $question->questionBody ?></i></b></div>
     <span><b>ОТВЕТ:</b></span>
-    <div class="modal-body"><?= $question->answerBody ?></div>
+    <div class="modal-body" style="text-align: left;"><?= $question->answerBody ?></div>
 </div>
