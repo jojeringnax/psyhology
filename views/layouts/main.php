@@ -57,6 +57,7 @@ AppAsset::register($this);
 					$searchForm = new SearchForm;
 					$form = ActiveForm::begin([
 						'validateOnChange' => true,
+						'action' => 'result',
 						'validateOnSubmit' => true,
 						'method' => 'get',
 						'fieldConfig' => [
