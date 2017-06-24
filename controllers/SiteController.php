@@ -74,7 +74,7 @@ class SiteController extends Controller
 	{
 	    $posts = Post::find()->all();
 	    $questions = Question::find()->all();
-	    return $this->render('public',[
+	    return $this->render('result',[
 	        'posts' => $posts,
             'questions' => $questions,
         ]);
