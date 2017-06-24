@@ -154,7 +154,7 @@ $this->renderAjax('/question/view', [
             <div class="calendar hidden-xs hidden-sm" style="width: 80%; height: 300px; margin: 0 auto; margin-top: 40px;">
                 <div class="monthName">Июнь</div>
                 <div class="calendBody">
-							<?php echo draw_calendar(7, 2017, $fillSpaces = true, $specials = $arraySpecials); ?>
+							<?php echo draw_calendar(7, 2017, $fillSpaces = true); ?>
 						</div>
             </div>
         </div>
