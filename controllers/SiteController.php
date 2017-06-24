@@ -75,11 +75,7 @@ class SiteController extends Controller
 	    $posts = Post::find()->all();
 	    $questions = Question::find()->all();
 	    $searchForm = new SearchForm;
-	    return $this->render('result',[
-	        'posts' => $posts,
-            'questions' => $questions,
-            'searchForm' => $searchForm,
-        ]);
+
 		if (Yii::$app->request->get()) {
             $posts = Post::find()->andFilterWhere([
                 'or',
