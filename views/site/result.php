@@ -111,11 +111,6 @@ use yii\widgets\ActiveForm;
 <?php echo '<div class="h3">Вопросы, найдено '.count($questions).':</div>'; ?>
 	<div class="row questions result">
 	<?php
-    $questContent = '
-        <div class="questionBody result">' . $question->questionBody . '</div>
-        <div class="answerBody question">' . $question->answerBody . '</div>
-        </div>
-        ';
 	$countQuests = count($questions);
 	if ($countQuests > 12) {
         $resultRows = floor(count($posts) / 12) + 1;
@@ -129,6 +124,11 @@ use yii\widgets\ActiveForm;
         $j = 0;
         $classes = bootstrapClassesSearch($countQuests);
         foreach($questions as $question): {
+            $questContent = '
+                <div class="questionBody result">' . $question->questionBody . '</div>
+                <div class="answerBody question">' . $question->answerBody . '</div>
+                </div>
+                ';
             if ($resultRows) {
                 echo '<div class="col-lg-2 col-md-2 col-sm-6 col-xs-6 question" style="height: 100%; margin-top:12px;" >'.$questContent;
                 $j++;
