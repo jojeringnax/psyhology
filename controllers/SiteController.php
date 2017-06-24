@@ -126,7 +126,7 @@ class SiteController extends Controller
 		}		
 		
 		$posts = Post::find()->orderBy('id')->all();
-		$quests = Question::find()->orderBy('id')->all();
+		$quests = Question::find()->orderBy('id')->where(['answerBody' => 'is not null'])->all();
         $activities = Activity::find()->orderBy('id')->all();
         return $this->render('index', [
 					'signupForm' => $signupForm,

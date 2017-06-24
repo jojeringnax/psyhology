@@ -12,6 +12,9 @@
 .questModalWrapper {
     border: 1px solid black;
     text-align: left;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
 }
 
 	/*
