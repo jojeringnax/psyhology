@@ -79,12 +79,12 @@ class SiteController extends Controller
 		if (Yii::$app->request->get()) {
             $posts = Post::find()->andFilterWhere([
                 'or',
-                ['LIKE','title', Yii::$app->request->get('SearchForm[q]')],
-                ['LIKE','content', Yii::$app->request->get('SearchForm[q]')],
+                ['LIKE','title', Yii::$app->request->get('SearchForm')],
+                ['LIKE','content', Yii::$app->request->get('SearchForm')],
             ])->all();
             $questions = Question::find()->andFilterWhere([
                 'and',
-                ['LIKE','questionBody', Yii::$app->request->get('SearchForm[q]')],
+                ['LIKE','questionBody', Yii::$app->request->get('SearchForm')],
                 'answerBody is not null',
             ])->all();
             return $this->render('result', [
