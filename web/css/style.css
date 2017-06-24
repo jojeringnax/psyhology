@@ -6,12 +6,11 @@
 
 #modalQuest > .modal-dialog > .modal-content {
     text-align: left;
-    padding: 10px;
+    padding: 2px;
 }
 
 .questModalWrapper {
     border: 1px solid black;
-    padding: 10px;
     text-align: left;
 }
 
