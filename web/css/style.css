@@ -1,3 +1,18 @@
+/*
+
+МОДАЛЬНЫЕ ОКНА
+
+*/
+
+#modalQuest {
+    text-align: left;
+}
+
+.questModalWrapper {
+    border: 1px solid black;
+    padding: 10px;
+}
+
 	/*
 
 	ФОРМА ПОИСКА СВЕРХУ
