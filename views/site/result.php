@@ -34,7 +34,6 @@ use yii\widgets\ActiveForm;
 </div>
 <div class="container-fluid">
 <?php echo '<div class="h3">Посты, найдено '.count($posts).':</div>'; ?>
-
 	<?php
 	$countPosts = count($posts);
 	if ($countPosts > 12) {
@@ -44,11 +43,10 @@ use yii\widgets\ActiveForm;
 	} else {
 		$resultRows = 0;
 	}
-
 	if ($countPosts) {
 		$i = 0;
-		$classes = bootstrapClassesSearch($countPosts);
 		$j = 0;
+        $classes = bootstrapClassesSearch($countPosts);
 		foreach($posts as $post): {
 			if ($resultRows) {
 				?>
@@ -111,26 +109,44 @@ use yii\widgets\ActiveForm;
 
 <div class="container-fluid">
 <?php echo '<div class="h3">Вопросы, найдено '.count($questions).':</div>'; ?>
-	<div class="row postResult">
+	<div class="row questions result">
 
 	<?php
 	$countQuests = count($questions);
-	if ($countQuests) {
-		$i = 0;
+	if ($countQuests > 12) {
+        $resultRows = floor(count($posts) / 12) + 1;
+        $countQuests = count($questions) % 12;
+        echo '<div class="row questionRow">';
+    } else {
+        $resultRows = 0;
+    }
+    if ($countQuests) {
+        $i = 0;
+        $j = 0;
         $classes = bootstrapClassesSearch($countQuests);
-
-		foreach($questions as $question): {
-			if ($countQuests < 12) {
-					echo '<div class="col-lg-'.$classes[$i].' col-md-'.$classes[$i].' col-sm-6 col-xs-6 post" style="margin-left: 0; height: 150px;" >
-						<div class="questionBody result">'.$question->questionBody.'</div>
-						<div class="answerBody post">'.$question->answerBody.'</div>
-					</div>
-					';
-			}
-			$i++;
-
-		};
-		endforeach;
+        foreach($questions as $question): {
+            if ($resultRows) {
+                echo '<div class="col-lg-2 col-md-2 col-sm-6 col-xs-6 question" style="height: 100%; margin-top:12px;" >
+                    <div class="questionBody result">' . $question->questionBody . '</div>
+                    <div class="answerBody question">' . $question->answerBody . '</div>
+                </div>
+                ';
+                $j++;
+                if ($j == 6) {
+                    $resultRows--;
+                    $j = 0;
+                    echo '</div><div class="row questionRow">';
+                }
+            } else {
+                echo '<div class="col-lg-'.$classes[$i].' col-md-'.$classes[$i].' col-sm-6 col-xs-6 question" style="height: 100%; margin-top:12px;" >
+                    <div class="questionBody result">' . $question->questionBody . '</div>
+                    <div class="answerBody question">' . $question->answerBody . '</div>
+                </div>
+                ';
+                $i++;
+            }
+        };
+        endforeach;
 	}
 ?>
 	</div>
