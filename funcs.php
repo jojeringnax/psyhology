@@ -109,3 +109,41 @@
 		return $calendar;
 	}
 ?>
+<?php
+function bootstrapClassesSearch($quantity) {
+
+    static $classes;
+
+    switch($quantity)
+    {
+
+        case 5:
+        $classes = ['2', '2', '4', '2', '2'];
+        break;
+
+        case 7:
+        $classes = ['1', '2', '2', '2', '2', '2', '1'];
+        break;
+
+        case 8:
+        $classes = ['1', '1', '2', '2', '2', '2', '1', '1'];
+        break;
+
+        case 9:
+        $classes = ['1', '1', '1', '2', '2', '2', '1', '1', '1'];
+        break;
+
+        case 10:
+        $classes = ['1', '1', '1', '1', '2', '2', '1', '1', '1', '1'];
+        break;
+
+        case 11:
+        $classes = ['1', '1', '1', '1', '1', '2', '1', '1', '1', '1', '1'];
+
+        default:
+        $classes = explode(' ', str_repeat(12/$quantity.' ', $quantity));
+        array_pop($classes);
+    }
+    return $classes;
+}
+?>

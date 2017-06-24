@@ -257,8 +257,7 @@ div.postContent {
 
 .postCommentsQuan > img, .postViews > img {
 	height: 16px;
-
-	margin-right: 10px;
+	margin-right: 6%;
 }
 
 .postBody {

@@ -3,9 +3,12 @@
 /* @var $this yii\web\View */
 
 $this->title = 'Результаты';
+
+
 use yii\widgets\Pjax;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+
 ?>
 
 <?php Pjax::begin([]); ?>
@@ -42,36 +45,7 @@ use yii\widgets\ActiveForm;
 
 	if ($countPosts) {
 		$i = 0;
-		switch($countPosts) {
-
-			case 5:
-				$classes = ['2', '2', '4', '2', '2'];
-				break;
-
-			case 7:
-				$classes = ['1', '2', '2', '2', '2', '2', '1'];
-				break;
-
-			case 8:
-				$classes = ['1', '1', '2', '2', '2', '2', '1', '1'];
-				break;
-
-			case 9:
-				$classes = ['1', '1', '1', '2', '2', '2', '1', '1', '1'];
-				break;
-
-			case 10:
-				$classes = ['1', '1', '1', '1', '2', '2', '1', '1', '1', '1'];
-				break;
-
-			case 11:
-				$classes = ['1', '1', '1', '1', '1', '2', '1', '1', '1', '1', '1'];
-
-			default:
-				$classes = explode(' ', str_repeat(12/$countPosts.' ', $countPosts));
-				array_pop($classes);
-		}
-
+		$classes = bootstrapClassesSearch($countPosts);
 		$j = 0;
 		foreach($posts as $post): {
 			if ($resultRows) {
@@ -86,7 +60,10 @@ use yii\widgets\ActiveForm;
 						</div>
 						<div class="postType" data-type=<?= Html::encode("{$post->type}") ?>></div>
 					</div>
-					<div class="postTitle"><a style="color: black;" href="<?= yii\helpers\Url::to(['post/view', 'id' => $post->id]) ?>" ><?= $post->title ?></a></div>
+					<?php echo '<div class="postTitle">
+                        <a style="color: black;" href="'.yii\helpers\Url::to(["post/view", "id" => $post->id]).'">
+					        '.$post->title.'
+					    </a></div>'; ?>
 					<div class="postContent"><?= substr($post->content, 0, strpos($post->content, ' ', 150)); ?></div>
 					<div class="postViews"><img src="/img/pic/views.png" /><?= $post->views; ?></div>
 					<div class="postCommentsQuan"><img src="/img/pic/comment.png" /><?= $post->commentsQuan;?></div>
@@ -136,24 +113,8 @@ use yii\widgets\ActiveForm;
 	$countQuests = count($questions);
 	if ($countQuests) {
 		$i = 0;
-		switch($countQuests) {
-			case 7:
-				$classes = ['1', '2', '2', '2', '2', '2', '1'];
-				break;
+        $classes = bootstrapClassesSearch($countQuests);
 
-			case 5:
-				$classes = ['2', '2', '4', '2', '2'];
-				break;
-
-			case 9:
-				$classes = ['1', '1', '1', '2', '2', '2', '1', '1', '1'];
-				break;
-
-			default:
-				$classes = explode(' ', str_repeat(12/$countQuests.' ', $countQuests));
-				array_pop($classes);
-
-		}
 		foreach($questions as $question): {
 			if ($countQuests < 12) {
 					echo '<div class="col-lg-'.$classes[$i].' col-md-'.$classes[$i].' col-sm-6 col-xs-6 post" style="margin-left: 0; height: 150px;" >

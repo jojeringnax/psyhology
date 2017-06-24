@@ -43,8 +43,8 @@ $config = [
             'showScriptName' => false,
             'rules' => [
 				'post/<id:\d+>' => 'post/view',
-		    		'question/<id:\d+>' => 'question/view',
-				
+                'question/<id:\d+>' => 'question/view',
+                'site/result/<q:\w+>' => 'result/q',
             ],
         ],
     ],
