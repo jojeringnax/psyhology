@@ -108,7 +108,7 @@ class SiteController extends Controller
             return $this->render('result', [
                 'posts' => $posts,
                 'questions' => $questions,
-                'searchForm' => $searchForm,
+                'searhForm' => $searchForm,
             ]);
         }
 	}
