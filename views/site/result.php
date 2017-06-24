@@ -21,7 +21,9 @@ use yii\widgets\ActiveForm;
 				'options' => ['data' => ['pjax' => true]],
 			]); ?>
 			<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-				<?= $form->field($searchForm, 'q')->textInput(array('placeholder' => 'Введите запрос', 'id' => 'orange'))->label('Поисковый запрос: '); ?>
+				<?= $form->field($searchForm, 'q')->textInput(array(
+				        'placeholder' => 'Введите запрос',
+                        'id' => 'orange'))->label('Поисковый запрос: '); ?>
 			</div>
 			<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
 			<?= Html::submitButton('search', ['class' => 'btn btn-primary coolButton']) ?>
@@ -64,7 +66,9 @@ use yii\widgets\ActiveForm;
                         <a style="color: black;" href="'.yii\helpers\Url::to(["post/view", "id" => $post->id]).'">
 					        '.$post->title.'
 					    </a></div>'; ?>
-					<div class="postContent"><?= substr($post->content, 0, strpos($post->content, ' ', 150)); ?></div>
+					<div class="postContent"><?= substr(
+					        $post->content, 0, strpos($post->content, ' ', 150)); ?>
+                    </div>
 					<div class="postViews"><img src="/img/pic/views.png" /><?= $post->views; ?></div>
 					<div class="postCommentsQuan"><img src="/img/pic/comment.png" /><?= $post->commentsQuan;?></div>
 				</div>

@@ -17,7 +17,7 @@ $(document).ready( function() {
 					$(this).children('.postContent').css('color', 'white');
 				});
 				$(this).children('.newTypeWrapper').children('.postType').each( function() {
-					$(this).html('<img class="postTypeImg" src="img/pic/' + $(this).data('type') + '.png" \/>');
+					$(this).html('<img class="postTypeImg" src="/img/pic/' + $(this).data('type') + '.png" \/>');
 				});
 			});
 		}
