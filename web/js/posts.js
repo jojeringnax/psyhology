@@ -3,6 +3,9 @@ $(document).ready( function() {
 	$('.postImg.img').height($('.small').width());
 	$(function() {
 		$.colorification = function() {
+            $('.postContent').each( function() {
+                $(this).height(104 - $(this).parent('.post').children('.postTitle').height());
+            });
 			$('.post').each( function() {
 				var color = colors[Math.floor(Math.random()*colors.length)]
 				$(this).css({
@@ -40,7 +43,5 @@ $(document).ready( function() {
 	$('.description').each(function() {
 		$(this).css('top', $(this).data('margin')*20 + 'px');
 	});
-	$('.postContent').each( function() {
-		$(this).height(104 - $(this).parent('.post').children('.postTitle').height());
-	});
+
 });
