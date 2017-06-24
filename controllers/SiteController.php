@@ -72,6 +72,12 @@ class SiteController extends Controller
 	 
 	public function actionResult()
 	{
+	    $posts = Post::find()->all();
+	    $questions = Question::find()->all();
+	    return $this->render('public',[
+	        'posts' => $posts,
+            'questions' => $questions,
+        ]);
 		if (Yii::$app->request->get()) {
             $posts = Post::find()->andFilterWhere([
                 'or',
