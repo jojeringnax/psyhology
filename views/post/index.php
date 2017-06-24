@@ -1,3 +1,8 @@
+<?php
+use yii\helpers\Html;
+use yii\helpers\Url;
+?>
+
 <div class="container-fluid">
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3" >
@@ -8,7 +13,8 @@
                     $arraySpecials = array();
                     foreach ($posts as $post):
                         if (date('d', strtotime($post->timestamp))[0] == '0') {
-                            $dayOfPost = str_replace('0', '', date('d', strtotime($post->timestamp)));
+                            $dayOfPost = str_replace('0', '', date('d', strtotime(
+                                $post->timestamp)));
                         } else {
                             $dayOfPost = date('d', strtotime($post->timestamp));
                         }
@@ -65,7 +71,9 @@
                     <div class="postTitle"><a href="<?= Url::to(['post/view', 'id' => $post->id]) ?>"><?= $post->title ?></a></div>
                     <div class="postContent"><?= substr($post->content, 0, strpos($post->content, ' ', 150)); ?></div>
                     <div class="postViews"><img src="/img/pic/views.png" /><?php echo($post->views); ?></div>
-                    <div class="postCommentsQuan"><img src="/img/pic/comment.png" /><?php echo($post->commentsQuan);?></div>
+                    <div class="postCommentsQuan"><img src="/img/pic/comment.png" />
+                        <?php echo($post->commentsQuan);?>
+                    </div>
                 </div>
             <?php
             } endforeach; ?>

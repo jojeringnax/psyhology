@@ -11,9 +11,9 @@ use yii\widgets\ActiveForm;
 ?>
 <?php Modal::begin([
     'id' => 'modalQuest',
-]); ?>
+]);
 
-<?php $this->renderAjax('/question/view', [
+$this->renderAjax('/question/view', [
     'question' => $question,
 ]); ?>
 
