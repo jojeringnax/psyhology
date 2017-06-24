@@ -4,8 +4,9 @@
 
 */
 
-#modalQuest {
+#modalQuest > .modal-dialog > .modal-content {
     text-align: left;
+    padding: 10px;
 }
 
 .questModalWrapper {
