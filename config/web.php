@@ -44,7 +44,7 @@ $config = [
             'rules' => [
 				'post/<id:\d+>' => 'post/view',
                 'question/<id:\d+>' => 'question/view',
-                'result/<q:\w+>' => 'site/result',
+                'result/<SearchForm[q]:\w+>' => 'site/result',
             ],
         ],
     ],
