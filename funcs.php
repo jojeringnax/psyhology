@@ -139,6 +139,7 @@ function bootstrapClassesSearch($quantity) {
 
         case 11:
         $classes = ['1', '1', '1', '1', '1', '2', '1', '1', '1', '1', '1'];
+        break;
 
         default:
         $classes = explode(' ', str_repeat(12/$quantity.' ', $quantity));
