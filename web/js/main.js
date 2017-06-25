@@ -24,12 +24,19 @@ $(document).ready( function() {
 	});
 
     $( function() {
-       $.headerization = function(elem, child, speed) {
-           elem.hover( function() {child.fadeOut(speed)}, function() {child.fadeIn(speed)});
+       $.headerization = function(elem, child, child2, speed) {
+           elem.hover( function() {
+               child.fadeOut(speed)
+               setTimeout( function() {
+                   child2.fadeOut(speed)
+               }, speed);
+           }, function() {
+               child.fadeIn(speed)
+           });
+
        }
     });
     var headerPic = $('.headerPic');
-    $.headerization(headerPic, $('.header1'), 1000);
-
+    $.headerization(headerPic, $('.header1'), $('.header2'), 1000);
     headerPic.height($(this).width()*0.16);
 });
