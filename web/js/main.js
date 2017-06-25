@@ -33,13 +33,13 @@ $(document).ready( function() {
            }, function() {
                child2.fadeIn(speed)
                setTimeout( function() {
-                   child1.fadeIn(speed)
+                   child.fadeIn(speed)
                }, speed);
            });
 
        }
     });
     var headerPic = $('.headerPic');
-    $.headerization(headerPic, $('.header1'), $('.header2'), 1000);
+    $.headerization(headerPic, $('.header1'), $('.header2'), 500);
     headerPic.height($(this).width()*0.16);
 });
