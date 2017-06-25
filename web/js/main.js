@@ -22,9 +22,16 @@ $(document).ready( function() {
 		}
 		openField = !openField;
 	});
+
 	$('.headerPic').hover( function() {
 		$(this).children('.header1').fadeOut('300');
-		$(this).children('.header2').setTimeout( function() {
-			$(this).fadeOut('300')}, '300');
-	});
+		setTimeout( function() {
+			$(this).children('.header2').fadeOut('300')
+		}, '300');
+	}, function() {
+		$(this).children('.header2')fadeIn('300');
+		setTimeout( function() {
+			$(this).children('.header1').fadeIn('300')
+		}, '300');
+	}).height($(this).width());
 });
