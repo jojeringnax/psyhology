@@ -148,7 +148,7 @@ use yii\widgets\ActiveForm;
 ?>
 	</div>
 </div>
-
+<?php Pjax::end(); ?>
 <script type="text/javascript">
 $(document).ready( function() {
 	$.colorification();
@@ -157,4 +157,4 @@ $(document).ready( function() {
 	});
 });
 </script>
-<?php Pjax::end(); ?>
+
