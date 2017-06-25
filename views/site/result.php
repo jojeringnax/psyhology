@@ -144,7 +144,6 @@ use yii\widgets\ActiveForm;
         endforeach;
 	}
 ?>
-	</div>
 </div>
 <script type="text/javascript">
 $(document).ready( function() {
