@@ -22,4 +22,9 @@ $(document).ready( function() {
 		}
 		openField = !openField;
 	});
+	$('.headerPic').hover( function() {
+		$(this).children('.header1').fadeOut('300');
+		$(this).children('.header2').setTimeout( function() {
+			$(this).fadeOut('300')}, '300');
+	});
 });

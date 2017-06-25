@@ -83,7 +83,9 @@ AppAsset::register($this);
 	<div class="row"> <!-- Это строка с картинкой главной -->
 		<div class="col-xs-2 col-sm-2 col-md-5 col-lg-5"></div>
 		<div class="col-xs-8 col-sm-8 col-md-2 col-lg-2 headerPic">
-			<img src="/img/headerPic.png" width="100%"/>
+			<img src="/img/header/header_pic_1.png" class="header1" style="z-index: 34;" width="100%"/>
+            <img src="/img/header/header_pic_2.png" class="header2" style="z-index: 33;" width="100%"/>
+            <img src="/img/header/header_pic_3.png" class="header3" style="z-index: 32;" width="100%"/>
 		</div>
 		<div class="col-xs-2 col-sm-2 col-md-5 col-lg-5"></div>
 	</div>
