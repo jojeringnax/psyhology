@@ -371,7 +371,7 @@ div.postContent {
 	vertical-align: middle;
 }
 
-.questForm {
+#questForm {
 	background-color: #b5b7b9;
 	width: 100%;
 	position: absolute;

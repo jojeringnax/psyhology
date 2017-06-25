@@ -74,8 +74,11 @@ $this->renderAjax('/question/view', [
 			<div class="row" style="height: 250px; background-color: #201600;">
 				<div class="hidden-xs hidden-sm col-md-4 col-lg-4">
 					<div class="questions" style="color: white;">
-						<span style="margin-left: 20px; float: left; margin-bottom: 20px;"> ЗАДАЙТЕ ВОПРОС:</span>
-						<div class="questForm" >
+						<span style="margin-left: 20px; float: left; margin-bottom: 20px;" data-target="#questForm" data-toggle="modal"> ЗАДАЙТЕ ВОПРОС:</span>
+						<?php Modal::begin([
+						        'id' => 'questForm'
+                        ]);
+						?>
 							<?php $form = ActiveForm::begin(); ?>
 								
 								<?= $form->field($questionForm, 'questionerName')->textInput(array('placeholder' => 'Ваше имя'))->label(''); ?>
@@ -83,7 +86,8 @@ $this->renderAjax('/question/view', [
 								<?= $form->field($questionForm, 'questionBody')->textarea(['rows' => 2, 'cols' => 5])->label('Ваш вопрос:*'); ?>
 								<?= Html::submitButton('Отправить', ['class' => 'questionSubmit']) ?>
 								<?php ActiveForm::end(); ?>
-						</div>
+						<?php Modal::end() ?>
+
 						<img src="img/questions.png" height="200" />
 					</div>
 				</div>
