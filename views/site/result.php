@@ -33,7 +33,7 @@ use yii\widgets\ActiveForm;
 </div>
 
 <div class="container-fluid">
-<?php echo '<div class="h3">Посты, найдено '.count($posts).':</div>'; ?>
+<div class="h3">Посты, найдено <?= count($posts) ?>:</div>
 	<?php
 	$countPosts = count($posts);
 	if ($countPosts > 12) {
@@ -89,7 +89,8 @@ use yii\widgets\ActiveForm;
 						</div>
 						<div class="postType" data-type=<?= Html::encode("{$post->type}") ?>></div>
 					</div>
-					<div class="postTitle"><a style="color: black;" href="<?= yii\helpers\Url::to(['post/view', 'id' => $post->id]) ?>" ><?= $post->title ?></a></div>
+					<div class="postTitle"><a style="color: black;" href="<?= yii\helpers\Url::to(['post/view', 'id' => $post->id]) ?>" >
+                            <?= $post->title ?></a></div>
 					<div class="postContent"><?= $post->content; ?></div>
 					<div class="postViews"><img src="/img/pic/views.png" /><?= $post->views; ?></div>
 					<div class="postCommentsQuan"><img src="/img/pic/comment.png" /><?= $post->commentsQuan; ?></div>
@@ -97,18 +98,15 @@ use yii\widgets\ActiveForm;
 				<?php
 				$i++;
 			}
-
-		};
+		}
 		endforeach;
 	}
 ?>
-
-
 </div>
 </div>
 
 <div class="container-fluid">
-<?php echo '<div class="h3">Вопросы, найдено '.count($questions).':</div>'; ?>
+    <div class="h3">Вопросы, найдено <?= count($questions) ?>:</div>
 	<div class="row questions result">
 	<?php
 	$countQuests = count($questions);
