@@ -23,15 +23,13 @@ $(document).ready( function() {
 		openField = !openField;
 	});
 
-	$('.headerPic').hover( function() {
-		$(this).children('.header1').fadeOut('1000');
-		$.setTimeout( function() {
-			$(this).children('.header2').fadeOut('1000')
-		}, '1000');
-	}, function() {
-		$(this).children('.header2').fadeIn('300');
-		$.setTimeout( function() {
-			$(this).children('.header1').fadeIn('300')
-		}, '300');
-	}).height($(this).width()*0.16);
+    $( function() {
+       $.headerization = function(elem, child, speed) {
+           elem.hover( function() {child.fadeOut(speed)}, function() {child.fadeIn(speed)});
+       }
+    });
+    var headerPic = $('.headerPic');
+    $.headerization(headerPic, $('.header1'), 1000);
+
+    headerPic.height($(this).width()*0.16);
 });
