@@ -21,11 +21,11 @@ $this->renderAjax('/question/view', [
 <div class="container-fluid">
 			<div class="row">
 				<div class="col-xs-6 col-sm-6 col-md-2 col-lg-2 postHeaderImg">
-					<img src="img/postHeaderImg.png" width="100%" />
+					<img src="img/postHeaderImg.png" height="131" style="margin-top: 28px;"/>
 				</div>
 				<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 postHeaderText">
 					
-					<h1>ЧТО Я ПРЕДЛАГАЮ?</h1>
+					<h1 class="firstHeader">ЧТО Я ПРЕДЛАГАЮ?</h1>
 
                     <p>Предлагаю выносить внутренний мусор</p>
 					<p>Чиню заборы личностных границ</p>
@@ -35,16 +35,18 @@ $this->renderAjax('/question/view', [
 				</div>
 				<div class="hidden-xs hidden-sm col-md-1 col-lg-1"></div>
 				<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-					<h1>А ЕСЛИ СЕРЬЕЗНО...</h1>
-					<p>У каждой нашей проблемы есть причина. Как говорят, "иногда это не наша вина, а наша беда". Если Вы больше не можете страдать, не получая желаемого результата, если Вы сказали себе: "Я так больше не могу!" - значит Ваша душа готова для изменений.<br />Я тоже прошла большой путь. Я сказала себе - Хватит! И у меня большой опыт. И далеко не сразу я нашла то, что искала. Решив свои проблемы, я научилась помогать другим.</p>
-					<p>А теперь помогу Вам...</p>
+					<div style="padding: 0 40px 0 12px; height: 137.5px; position: relative;">
+						<h1 class="firstHeader">А ЕСЛИ СЕРЬЕЗНО...</h1>
+						<p style="text-align: justify;">У каждой нашей проблемы есть причина. Как говорят, "иногда это не наша вина, а наша беда". Если Вы больше не можете страдать, не получая желаемого результата, если Вы сказали себе: "Я так больше не могу!" - значит Ваша душа готова для изменений.<br />Я тоже прошла большой путь. Я сказала себе - Хватит! И у меня большой опыт. И далеко не сразу я нашла то, что искала. Решив свои проблемы, я научилась помогать другим.</p>
+						<p style="text-align: justify; position: absolute; bottom:0; margin:0;">А теперь помогу Вам...</p>
+					</div>
 				</div>
 			</div>
 		</div>
 		<div class="container-fluid">
-			<div class="row" style="height: 111px; padding-bottom: 37px;padding-top: 37px; background-color: #e5e5e5;">
-				<div class="hidden-xs hidden-sm col-md-3 col-lg-3">
-					<img src="img/letter.png" style="height: 37px; float:left;" />
+			<div class="row" style="height: 60px; background-color: #e5e5e5;">
+				<div class="hidden-xs hidden-sm col-md-3 col-lg-3" style="margin-top:20px;">
+					<img src="img/letter.png" style="height: 20px; float:left; margin-left: 14%;" />
 					
 					<?php $form = ActiveForm::begin([
 						'validateOnChange' => true,
@@ -56,11 +58,11 @@ $this->renderAjax('/question/view', [
 				        ],
 				    ],
 				]); ?>
-						<?= Html::submitButton('ПОДПИСАТЬСЯ', ['style' => 'border: none; background-color: transparent; height: 37px; font-size:26px; vertical-align: middle;']) ?>
+						<?= Html::submitButton('ПОДПИСАТЬСЯ', ['style' => 'padding:0; border: none; background-color: transparent; height: 20px; font-size: 20px; font-family: LatoWebLight; line-height: 100%;']) ?>
 				</div>
-				<div class="hidden-xs hidden-sm col-md-4 col-lg-4" style="float: left; height: 37px;" >
-						<?= $form->field($signupForm, 'name', ['template' => '<div class="wrapper" style="float: left; height: 37px;">{input}{error}</div>'])->textInput(array('placeholder' => 'Ваше имя', 'style'=>'height: 37px;', 'class' => ''))->label(''); ?>
-						<?= $form->field($signupForm, 'email', ['template' => '<div class="wrapper" style="height: 37px; float:left; margin-left:20px;">{input}{error}</div>'])->textInput(array('placeholder' => 'Ваш e-mail', 'style'=>'height: 37px;', 'class' => ''))->label(''); ?>
+				<div class="hidden-xs hidden-sm col-md-4 col-lg-4" style="float: left; height: 20px; margin-top: 20px;" >
+						<?= $form->field($signupForm, 'name', ['template' => '<div class="wrapper" style="float: left; height: 20px;">{input}{error}</div>'])->textInput(array('placeholder' => 'Ваше имя', 'style'=>'height: 20px;', 'class' => ''))->label(''); ?>
+						<?= $form->field($signupForm, 'email', ['template' => '<div class="wrapper" style="height: 37px; float:left; margin-left:20px;">{input}{error}</div>'])->textInput(array('placeholder' => 'Ваш e-mail', 'style'=>'height: 20px;', 'class' => ''))->label(''); ?>
 						<?php ActiveForm::end(); ?>
 				</div>
 				

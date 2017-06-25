@@ -22,6 +22,7 @@ AppAsset::register($this);
 			div {text-align: center;}
 		</style>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link rel="stylesheet" href="/css/latofonts.css" />
 		<link rel="stylesheet" href="/css/bootstrap.min.css" />
 		<link rel="stylesheet" href="/css/bootstrap-theme.min.css" />
 		<link rel="stylesheet" href="/css/style.css" />
@@ -36,48 +37,62 @@ AppAsset::register($this);
 <?php $this->beginBody() ?>
 
 <div class="container-fluid" style="background-color:#201600; height:auto;">
-	<div class="row" style="margin-top: 20px;"> <!-- Это строка с лупой и конвертом для мобильников -->
+	<!--<div class="row" style="position: fixed; left:50%;">
+		<div class="hidden-sm hidden-xs hidden-md col-lg-12" style="text-align: center; font-size: 32px; color: white;">LG</div>
+		<div class="col-sm-12 hidden-xs hidden-md hidden-lg" style="text-align: center; font-size: 28px; color: white;">SM</div>
+		<div class="hidden-sm hidden-xs col-md-12 hidden-lg" style="text-align: center; font-size: 24px; color: white;">MD</div>
+		<div class="hidden-sm col-xs-12 hidden-md hidden-lg" style="text-align: center; font-size: 20px; color: white;">XS</div>
+	</div> -->
+	<div class="row" style="margin-top: 10px;"> <!-- Это строка с лупой и конвертом для мобильников -->
 		<div class="col-xs-6 col-sm-6 col-md-8 col-lg-8"></div>
 		<div class="col-xs-2 col-sm-2 hidden-md hidden-lg new mobile">new</div>
-		<div class="col-xs-2 col-sm-2 hidden-md hidden-lg loop mobile"><img class="headerLoop" src="/img/loop.png" /><input type="text" style="width: 0;" /></div>
-		<div class="col-xs-2 col-sm-2 hidden-md hidden-lg letter mobile"><img src="/img/letter.png" /></div>
+		<div class="col-xs-2 col-sm-2 hidden-md hidden-lg loop mobile">
+			<img class="headerLoop" src="/img/loop.png" /><input type="text" style="width: 0;" />
+		</div>
+		<div class="col-xs-2 col-sm-2 hidden-md hidden-lg letter mobile">
+			<img src="/img/letter.png" />
+		</div>
 		<div class="hidden-xs hidden-sm col-md-4 col-lg-4">
 			<div class="row"> <!-- Это строка с лупой и конвертом -->
-				<div class="col-md-4 col-lg-4 new">
+				<div class="col-md-8 col-lg-8 new" style="text-align: right; color: red; text-decoration: italic;">
 				<?php 
 				if (Yii::$app->db->createCommand('SELECT COUNT(*) FROM post WHERE timestamp >= CURDATE()')->queryScalar()) {
-					$new='new';
+					$new='new!';
 				} else {
 					$new = '';
 				}
-				echo $new; ?></div>
-				<div class="col-md-8 col-lg-8 loop">
-					<img class="headerLoop" src="/img/loop.png" width="10%" style="margin-right: 10px;" />
+				echo $new; ?>
+				</div>
+				<div class="col-md-4 col-lg-4 loop">
 					<?php 
-					$searchForm = new SearchForm;
-					$form = ActiveForm::begin([
-						'validateOnChange' => true,
-						'action' => '/basic/web/result',
-						'validateOnSubmit' => true,
-						'method' => 'get',
-						'fieldConfig' => [
-						'options' => [
-							'tag' => false,
-							'class' => 'headerInputSubmit',
+						$searchForm = new SearchForm;
+						$form = ActiveForm::begin([
+							'validateOnChange' => true,
+							'action' => '/basic/web/result',
+							'validateOnSubmit' => true,
+							'method' => 'get',
+							'fieldConfig' => [
+							'options' => [
+								'tag' => false,
+								'class' => 'headerInputSubmit',
+								],
 							],
-						],
-					]);
-					?>
-				
-				<?= $form->field($searchForm, 'q', ['template' => '{input}'])->textInput(array('placeholder' => 'Поиск', 'style'=>'width: 100%; margin-right: 5%;', 'class' => ''))->label(''); ?><?= Html::submitButton('', ['class' => 'headerInputSubmit']) ?>
-				<?php ActiveForm::end(); ?>
+						]);
+						?>
+					
+					<?= $form->field($searchForm, 'q', ['template' => '{input}'])->textInput(array('placeholder' => 'Поиск', 'style'=>'width: 100%; margin-right: 5%;', 'class' => ''))->label(''); ?><?= Html::submitButton('', ['class' => 'headerInputSubmit']) ?>
+					<?php ActiveForm::end(); ?>
+					<img class="headerLoop" src="/img/loop.png" width="10%" style="margin-right: 20px; margin-top: 5px; float: right;" />
 				</div>
 			</div>
 		</div>
 	</div>
 	<div class="row"> <!-- Это строка с названием главным -->
 		<div class="col-xs-1 col-sm-1 col-md-4 col-lg-4"></div>
-		<div class="col-xs-10 col-sm-10 col-md-4 col-lg-4 headerText"><a href="<?= yii\helpers\Url::to(['/']); ?>">blog СВЕТЛАНЫ ПЕЙДА</a></div>
+		<div class="col-xs-10 col-sm-10 col-md-4 col-lg-4 headerText">
+		<a href="<?= yii\helpers\Url::to(['/']); ?>" style="word-spacing: 0.4em; font-size: 20px;">
+			<span style="font-family: LatoWebLight; font-weight:100;"">blog</span> <b>СВЕТЛАНЫ ПЕЙДА</b>
+		</a></div>
 		<div class="col-xs-1 col-sm-1 col-md-4 col-lg-4"></div>
 	</div>
 	<div class="row"> <!-- Это строка с картинкой главной -->
@@ -89,26 +104,26 @@ AppAsset::register($this);
 		</div>
 		<div class="col-xs-2 col-sm-2 col-md-5 col-lg-5"></div>
 	</div>
-	<nav class="navbar navbar-default" role="navigation">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+	<div class="row">
+		<nav style="border: none; background: transparent;" class="navbar navbar-default navigation" role="navigation">
+			<div style="border: none; background: transparent;"  class="navbar-header">
+				<button type="button" style="border: none;"  class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
 					<span class="sr-only">Toggle navigation</span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
 			</div>
-			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<div class="collapse navbar-collapse" style="border: none; background: transparent;" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-center">
-					<li class="active"><a href="#">БЛОГ</a></li>
-					<li><a href="#">ВОПРОС-ОТВЕТ</a></li>
-					<li><a href="#">БИБЛИОТЕКА</a></li>
-					<li><a href="#">АНОНСЫ</a></li>
+					<li class="main_menu"><a href="#">БЛОГ</a></li>
+					<li><a class="main_menu" href="#">ВОПРОС-ОТВЕТ</a></li>
+					<li><a class="main_menu" href="#">БИБЛИОТЕКА</a></li>
+					<li><a class="main_menu" href="#">АНОНСЫ</a></li>
 				</ul>
 			</div>
-		</div>
-	</nav>
+		</nav>
+	</div>
 </div>
 <?= $content ?>
 <div class="container-fluid">
@@ -153,6 +168,7 @@ AppAsset::register($this);
 		<div class="hidden-xs hidden-sm col-md-1 col-lg-1"></div>
 	</div>
 </div>
+
 <?php $this->endBody() ?>
 </body>
 </html>
