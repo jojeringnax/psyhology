@@ -84,6 +84,15 @@ div.loop > form {
 	background-color: transparent;
 }
 
+.headerPic {
+    position: relative;
+}
+
+
+.headerPic > img {
+    position: absolute;
+}
+
 /* 
 
 КАЛЕНДАРЬ
