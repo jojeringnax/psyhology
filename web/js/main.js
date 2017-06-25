@@ -25,13 +25,13 @@ $(document).ready( function() {
 
 	$('.headerPic').hover( function() {
 		$(this).children('.header1').fadeOut('1000');
-		setTimeout( function() {
+		$.setTimeout( function() {
 			$(this).children('.header2').fadeOut('1000')
 		}, '1000');
 	}, function() {
 		$(this).children('.header2').fadeIn('300');
-		setTimeout( function() {
+		$.setTimeout( function() {
 			$(this).children('.header1').fadeIn('300')
 		}, '300');
-	}).height($('.headerPic').width());
+	}).height($(this).width()*0.16);
 });
