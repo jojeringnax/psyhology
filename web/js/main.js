@@ -26,12 +26,12 @@ $(document).ready( function() {
     $( function() {
        $.headerization = function(elem, child, child2, speed) {
            elem.hover( function() {
-               child.fadeOut(speed)
+               child.fadeOut(speed*2)
                setTimeout( function() {
                    child2.fadeOut(speed)
                }, speed);
            }, function() {
-               child2.fadeIn(speed)
+               child2.fadeIn(speed*2)
                setTimeout( function() {
                    child.fadeIn(speed)
                }, speed);
