@@ -24,14 +24,14 @@ $(document).ready( function() {
 	});
 
 	$('.headerPic').hover( function() {
-		$(this).children('.header1').fadeOut('300');
+		$(this).children('.header1').fadeOut('1000');
 		setTimeout( function() {
-			$(this).children('.header2').fadeOut('300')
-		}, '300');
+			$(this).children('.header2').fadeOut('1000')
+		}, '1000');
 	}, function() {
 		$(this).children('.header2').fadeIn('300');
 		setTimeout( function() {
 			$(this).children('.header1').fadeIn('300')
 		}, '300');
-	}).height($(this).width());
+	}).height($('.headerPic').width());
 });
