@@ -31,7 +31,10 @@ $(document).ready( function() {
                    child2.fadeOut(speed)
                }, speed);
            }, function() {
-               child.fadeIn(speed)
+               child2.fadeIn(speed)
+               setTimeout( function() {
+                   child1.fadeIn(speed)
+               }, speed);
            });
 
        }
