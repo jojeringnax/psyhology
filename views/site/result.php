@@ -148,9 +148,6 @@ use yii\widgets\ActiveForm;
 <script type="text/javascript">
 $(document).ready( function() {
 	$.colorification();
-	$('.post').each( function(){
-		$(this).width($(this).width() - 12);
-	});
 });
 </script>
 <?php Pjax::end(); ?>
