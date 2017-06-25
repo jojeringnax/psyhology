@@ -373,12 +373,7 @@ div.postContent {
 
 #questForm {
 	background-color: #b5b7b9;
-	width: 100%;
-	position: absolute;
-	z-index: 331;
 	border: 3px white double;
-	top: 250px;
-	display: none;
 }
 
 div.has-error > div.help-block {
