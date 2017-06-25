@@ -10,7 +10,7 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 ?>
-
+<?php Pjax::begin(); ?>
 <div class="container-fluid">
 	<div class="row postFind">
 		<?php $form = ActiveForm::begin([
@@ -31,7 +31,7 @@ use yii\widgets\ActiveForm;
 		<?php ActiveForm::end(); ?>
 	</div>
 </div>
-<?php Pjax::begin([]); ?>
+
 <div class="container-fluid">
 <?php echo '<div class="h3">Посты, найдено '.count($posts).':</div>'; ?>
 	<?php
