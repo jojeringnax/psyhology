@@ -13,9 +13,7 @@ use yii\widgets\ActiveForm;
     'id' => 'modalQuest',
 ]);
 
-$this->renderAjax('/question/view', [
-    'question' => $question,
-]); ?>
+?>
 
 <?php Modal::end(); ?>
 <div class="container-fluid">

@@ -12,33 +12,33 @@ class PostController extends Controller
     /**
      * @inheritdoc
      */
-	public function actionIndex()
-	{
-		$posts = Post::find()->all();
-		return $this->renderPartial('index', [
-		    'posts' => $posts,
+    public function actionIndex()
+    {
+        $posts = Post::find()->all();
+        return $this->renderPartial('index', [
+            'posts' => $posts,
         ]);
-	}
-	
-	public function actionView()
-	{
-	    $comment = new CommentForm();
-	    
-	    if ($comment->load(Yii::$app->request->post()) && $comment->post()) {
-	        return $this->refresh();
-	    }
+    }
+    
+    public function actionView()
+    {
+        $comment = new CommentForm();
+        
+        if ($comment->load(Yii::$app->request->post()) && $comment->post()) {
+            return $this->refresh();
+        }
 
-		$id = \Yii::$app->request->get('id');
+        $id = \Yii::$app->request->get('id');
 
-		$post = Post::findOne($id);
+        $post = Post::findOne($id);
 
-		if(empty($post)) throw new \yii\web\HttpException(404, 'Такой страницы, наверное, нет');
+        if(empty($post)) throw new \yii\web\HttpException(404, 'Такой страницы, наверное, нет');
 
-		return $this->render('view', [
+        return $this->render('view', [
             'id' => $id,
-			'comment' => $comment,
-			'post' => $post,
-		]);
-	}
+            'comment' => $comment,
+            'post' => $post,
+        ]);
+    }
 }
 ?>

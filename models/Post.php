@@ -25,7 +25,7 @@ class Post extends ActiveRecord
 	public function rules()
 	{
 		return [
-			[['title', 'content'], 'required'],
+			[['title', 'content', 'type'], 'required'],
 		];
 	}
 

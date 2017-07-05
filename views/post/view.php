@@ -17,13 +17,13 @@ p.help-block {
 }
 </style>
 <div class="panel panel-default">
-	<div class="panel-title postTitleSolo">
-		<h3 class="panel-title"><?= $post->title ?></h3>
-	</div>
-	<div class="panel-body postBody">
-		<?= $post->content ?>
-	</div>
-	<div 
+    <div class="panel-title postTitleSolo">
+        <h3 class="panel-title"><?= $post->title ?></h3>
+    </div>
+    <div class="panel-body postBody">
+        <?= $post->content ?>
+    </div>
+    <div 
 </div>
 <hr>
 
@@ -118,22 +118,22 @@ use app\models\Comment;
 </div>
 
 <?php 
-		$lines = file('access.log');
-		$line = $lines[count($lines)-1];
-		$start = 0;
-    	$finish = strpos($line, ' - - ');
-    	$IP = substr($line, $start, $finish);
-		
-				    	
-	   
-		if(!(Postviews::find()->where('IP = "'.$IP.'"')->all()) || !(Postviews::find()->where('postId = '.$post->id)->all())) {
-			$postView = new Postviews;
-			$postView->postId = $post->id;
-			$postView->IP = $IP;
-			$postView->save();
+        $lines = file('access.log');
+        $line = $lines[count($lines)-1];
+        $start = 0;
+        $finish = strpos($line, ' - - ');
+        $IP = substr($line, $start, $finish);
+        
+                        
+       
+        if(!(Postviews::find()->where('IP = "'.$IP.'"')->all()) || !(Postviews::find()->where('postId = '.$post->id)->all())) {
+            $postView = new Postviews;
+            $postView->postId = $post->id;
+            $postView->IP = $IP;
+            $postView->save();
             $post->views = $post->views + 1;
             $post->save();
-		}
+        }
 
 
 ?>
