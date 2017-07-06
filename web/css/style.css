@@ -7,7 +7,6 @@ ul.nav>li {
 	width: 25%;
 }
 
-
 .navigation {
 	background: transparent;
 	border: none;
@@ -571,6 +570,28 @@ div.has-error > div.help-block {
 БИБЛИОТЕКА
 
 */
+
+
+.letterForm {
+	position: relative;
+}
+
+.crest {
+	position: absolute;
+	font-size: 18px;
+	right: 8px;
+	top: -12px;
+	height: 27px;
+	width: 27px;
+	color: #6b6966;
+	border: 1px solid #6b6966;
+	border-radius: 100%;
+	background: white;
+}
+
+.crest:hover {
+	cursor: pointer;
+}
 
 .libraryWord {
 	font-size: 32px;

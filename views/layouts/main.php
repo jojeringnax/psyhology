@@ -54,7 +54,7 @@ AppAsset::register($this);
 		</div>
 		<div class="hidden-xs hidden-sm col-md-4 col-lg-4">
 			<div class="row"> <!-- Это строка с лупой и конвертом -->
-				<div class="col-md-8 col-lg-8 new" style="text-align: right; color: red; text-decoration: italic;">
+				<div class="col-md-5 col-lg-5 new" style="text-align: right; color: red; text-decoration: italic;">
 				<?php 
 				if (Yii::$app->db->createCommand('SELECT COUNT(*) FROM post WHERE timestamp >= CURDATE()')->queryScalar()) {
 					$new='new!';
@@ -63,7 +63,7 @@ AppAsset::register($this);
 				}
 				echo $new; ?>
 				</div>
-				<div class="col-md-4 col-lg-4 loop">
+				<div class="col-md-7 col-lg-7 loop">
 					<?php 
 						$searchForm = new SearchForm;
 						$form = ActiveForm::begin([
@@ -82,7 +82,7 @@ AppAsset::register($this);
 					
 					<?= $form->field($searchForm, 'q', ['template' => '{input}'])->textInput(array('placeholder' => 'Поиск', 'style'=>'width: 100%; margin-right: 5%;', 'class' => ''))->label(''); ?><?= Html::submitButton('', ['class' => 'headerInputSubmit']) ?>
 					<?php ActiveForm::end(); ?>
-					<img class="headerLoop" src="/img/loop.png" width="10%" style="margin-right: 20px; margin-top: 5px; float: right;" />
+					<img class="headerLoop" src="/img/loop.png" width="10%" style="margin-right: 20px; float: right;" />
 				</div>
 			</div>
 		</div>

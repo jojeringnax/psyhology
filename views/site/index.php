@@ -139,6 +139,7 @@ use yii\widgets\ActiveForm;
         <div class="hidden-xs hidden-sm col-md-2 col-lg-2 library">
             <span id="name">КНИГИ</span>
             <span id="A-Z">А - Я</span>
+            <div class="result" style="position: fixed; top: 75px; left: 50px; background: white; border: 1px solid black;z-index: 90000;"></div>
         </div>
         <div class="hidden-xs hidden-sm col-md-1 col-lg-1"></div>
         <div class="hidden-xs hidden-sm col-md-2 col-lg-2 library">
@@ -156,10 +157,10 @@ use yii\widgets\ActiveForm;
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
             <div class="calendar hidden-xs hidden-sm" style="width: 80%; height: 300px; margin: 0 auto; margin-top: 40px;">
-                <div class="monthName">Июнь</div>
+                <div class="monthName">Июль</div>
                 <div class="calendBody">
-							<?php echo draw_calendar(7, 2017, $fillSpaces = true); ?>
-						</div>
+					<?php echo draw_calendar(8, 2017, $fillSpaces = true); ?>
+				</div>
             </div>
         </div>
         <div class="col-xs-12 col=sm-12 col-md-5 col-lg-5 anounce">

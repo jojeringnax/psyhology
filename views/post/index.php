@@ -2,29 +2,44 @@
 use yii\helpers\Html;
 use yii\helpers\Url;
 
+$moths_rus = array(
+        'January' => 'Январь',
+        'February' => 'Февраль',
+        'March' => 'Март',
+        'April' => 'Апрель',
+        'May' => 'Май',
+        'June' => 'Июнь',
+        'July' => 'Июль',
+        'August' => 'Август',
+        'September' => 'Сентябрь',
+        'October' => 'Октябрь',
+        'November' => 'Ноябрь',
+        'December' => 'Декабрь',
+    );
 ?>
 <div class="container-fluid">
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3" >
             <div class="calendar hidden-xs hidden-sm" style="width: 80%; height: 300px; margin: 0 auto;">
-                <div class="monthName">Июнь</div>
+                <div class="monthName"><?= $moths_rus[date('F')] ?></div>
                 <div class="calendBody">
                     <?php
                     $arraySpecials = array();
+                    $month = date('F');
                     foreach ($posts as $post):
+                        if (date('F', strtotime($post->timestamp)) != $month) {
+                            continue;
+                        }
                         if (date('d', strtotime($post->timestamp))[0] == '0') {
                             $dayOfPost = str_replace('0', '', date('d', strtotime(
                                 $post->timestamp)));
                         } else {
                             $dayOfPost = date('d', strtotime($post->timestamp));
                         }
-                        if(in_array($dayOfPost, array_keys($arraySpecials))) {
-                            $arraySpecials[$dayOfPost][$post->id] = $post->title;
-                        } else {
-                            $arraySpecials[$dayOfPost] = array();
-                        }
+                        $arraySpecials[$dayOfPost][$post->id] = $post->title;
                     endforeach;
-                    echo draw_calendar(7, 2017, $fillSpaces = true, $specials = $arraySpecials); ?>
+
+                    echo draw_calendar(8, 2017, $fillSpaces = true, $specials = $arraySpecials); ?>
                 </div>
             </div>
             <div class="tags hidden-xs hidden-sm" style="width: 40%; height: 300px; margin: 0 auto; background-color: #ccc;">Тэги</div>

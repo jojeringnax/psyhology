@@ -7,8 +7,7 @@ $(document).ready( function() {
 				'form').animate({
 					'width': '70%'
 				}, 300).children(
-				'button').css(
-				'background', 'url("/img/pic/search.png") right top / contain no-repeat');
+				'button');
 			$('#searchform-q').css('padding', '5px');
 		} else {
 			$(this).parent(
@@ -22,6 +21,9 @@ $(document).ready( function() {
 		}
 		openField = !openField;
 	});
+	
+	
+	
 
     $( function() {
        $.headerization = function(elem, child, child2, speed) {
