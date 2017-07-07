@@ -601,11 +601,12 @@ div.has-error > div.help-block {
 
 .libraryInput {
 	width: 80%;
+	height: 50px;
 	float: inherit;	
 }
 
 .libraryLoop {
-	width: 10%;
+	height: 50px;
 	float: right;
 	margin-top: 4px;
 }
@@ -628,9 +629,50 @@ div.has-error > div.help-block {
 
 .library {
 	padding-top: 25px;
+	position: relative;
 }
 
+.letter {
+	margin: 0;
+	text-align: left;
+	font-size: 28px;
+	color: #d24a43;
+}
 
+.resultLibrary {
+	text-align: left;
+	background:#e5e6e7;
+	padding: 2px;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	display: none;
+	width: 100%;
+	z-index: 90000;
+}
+
+.resultLibrary > .wrapper {
+	padding: 10px 20px;
+	border: 1px solid black;
+}
+
+.resultLibrary > .wrapper, .resultLibrary {
+-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+
+span#A-Z:hover {
+	cursor: pointer;
+}
+
+h1.letter {
+	font-weight: bold;
+}
+
+div.letter {
+	height: 38px;
+}
 /* 
 
 АНОНСЫ

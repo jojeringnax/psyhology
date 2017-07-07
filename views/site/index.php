@@ -138,18 +138,17 @@ use yii\widgets\ActiveForm;
         </form>
         <div class="hidden-xs hidden-sm col-md-2 col-lg-2 library">
             <span id="name">КНИГИ</span>
-            <span id="A-Z">А - Я</span>
-            <div class="result" style="position: fixed; top: 75px; left: 50px; background: white; border: 1px solid black;z-index: 90000;"></div>
+            <span id="A-Z" data-type="books">А - Я</span>
         </div>
         <div class="hidden-xs hidden-sm col-md-1 col-lg-1"></div>
         <div class="hidden-xs hidden-sm col-md-2 col-lg-2 library">
             <span id="name">СТАТЬИ</span>
-            <span id="A-Z">А - Я</span>
+            <span id="A-Z" data-type="articles">А - Я</span>
         </div>
         <div class="hidden-xs hidden-sm col-md-1 col-lg-1"></div>
         <div class="hidden-xs hidden-sm col-md-2 col-lg-2 library">
             <span id="name">ПРОЧЕЕ</span>
-            <span id="A-Z">А - Я</span>
+            <span id="A-Z" data-type="other">А - Я</span>
         </div>
     </div>
 </div>

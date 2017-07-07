@@ -56,6 +56,6 @@ class Book extends \yii\db\ActiveRecord
 
     public function getAuthor()
     {
-        return $this->hasOne(Author::className(), ['author_id' => 'id']);
+        return $this->hasOne(Author::className(), ['id' => 'author_id']);
     }
 }

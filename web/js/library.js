@@ -1,16 +1,9 @@
 $(document).ready( function() {
-	var looppHeight = $('.libraryLoop').height();
-	$('.libraryInput').height(looppHeight - 6);
 	var clicked = false;
 
 	$('span#A-Z').click( function() {
-
-		$('.crest').click( function() {
-			if(clicked) {
-				$('span.opened').removeClass('opened').html('А - Я');
-			}
-			clicked = false;
-		});
+		$(this).data('value', 'А - Я');
+		var type = $(this).data('type');
 
 		if ($(this).hasClass('opened')) {
 			clicked = false;
@@ -21,12 +14,11 @@ $(document).ready( function() {
 		$('span.opened').each (function() {
 			$(this).removeClass('opened').html($(this).data('value'));
 		});
-
-		$(this).data('value', 'А');
 		$(this).html('');
 		$(this).append(
-			'<div class="letterForm"><div class="crest">X</div><form id="letterForm" onsubmit="return false;" class="letter">\
+			'<div class="letterForm"><form id="letterForm" onsubmit="return false;">\
 			<select class="letterInput" maxlength="1" value="'+$(this).data('value')+'" style="width: 80%; margin: 0 auto; font-size:" list="tri" patter="[А-Яа-яЁё]" type="text" name="letter">\
+			    <option>А - Я</option>\
 			    <option>А</option>\
 			    <option>Б</option>\
 			    <option>В</option>\
@@ -58,28 +50,35 @@ $(document).ready( function() {
 			  </select>\
 			<input style="display: none;" type="submit" /></form></div>'
 			);
-		$('.letterInput').focus();
 		$(this).addClass('opened');
 		clicked = true;
 		
 		$('select.letterInput').on('input', function() {
 			value = $(this).val();
-			$('span.opened').data('value', value).html(value).removeClass('opened');
+
+			$('span.opened').data('value', value).html(value).removeClass('opened').addClass('choosen');
+
 			$.ajax({
-			url: 'library?letter='+letter,
-			dataType: 'html',
-			success: function(data) {
-				$('.result').html(data);
-			},
-			error: function (xhr, ajaxOptions, thrownError) {
-		        alert(xhr.status);
-		        alert(thrownError);
-		    }
-		});
+				url: 'library?letter='+value+'&type='+type,
+				dataType: 'html',
+				success: function(data) {
+					var choosenSpan = $('span.choosen');
+					var choosenSpanLibrary = choosenSpan.parent('.library');
+					choosenSpanLibrary.append('<div class="resultLibrary"></div>');
+					var choosenSpanLibraryResult = choosenSpanLibrary.children('.resultLibrary');
+					choosenSpanLibraryResult.css('display', 'block').html('<button type="button" class="close" style="margin-right: 5px;">×</button>'+data);
+					choosenSpan.removeClass('choosen');
+					choosenSpanLibraryResult.children('.close').click( function() {
+						choosenSpanLibraryResult.css('display', 'none');
+					});
+				},
+				error: function (xhr, ajaxOptions, thrownError) {
+			        alert(xhr.status);
+			        alert(thrownError);
+			    }
+			});
 			clicked = false;
 		});
-
-		var letter = $(this).data('value');
 
 		
 	});
