@@ -12,14 +12,13 @@ class LibraryController extends \yii\web\Controller
     		$letter = $request->get('letter');
     		$type = $request->get('type');
     		$authors = Author::find()->joinWith('books')->where('surname like \''.$letter.'%\'')->all();
-    		return $this->renderPartial('index', [
+    		return $this->renderPartial('indexAJAX', [
     				'letter' => $letter,
     				'authors' => $authors,
     			]);
     	} else {
     		$authors = Author::find()->joinWith('books')->all();
     		return $this->render('index', [
-    			'letter' => $request->get('letter'),
     			'authors' => $authors,
     		]);
     	}

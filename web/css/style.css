@@ -1,3 +1,10 @@
+input[name="img"] {
+    background-image:transparent url('img/letter.png') no-repeat center top;
+    height: 20px; 
+    float:left; 
+    margin-left: 14%;
+}
+
 ul.nav {
 	width: 50%;
 	margin-left: 25%;
@@ -6,7 +13,9 @@ ul.nav {
 ul.nav>li {
 	width: 25%;
 }
-
+.main_menu{
+	font-size: 14px;
+}
 .navigation {
 	background: transparent;
 	border: none;
@@ -125,7 +134,8 @@ div.loop > form {
 }
 
 .headerLoop {
-	float: left;
+	/*float: left;*/
+	width: 25px;
 }
 
 .headerLoop:hover {
@@ -183,10 +193,11 @@ div.loop > form {
 	width: 100%;
 	color: #6a9984;
 	font-size: 32px;
+	margin-bottom: 15px;
 }
 
 .calendBody {
-	height: 85%;
+	height: 80%;
 	width: 100%;
 }
 .b-calendar__tb {
@@ -196,7 +207,7 @@ div.loop > form {
 }
 
 .b-calendar__head {
-	font-size: 20px;
+	font-size: 14px;
 }
 	
 .b-calendar__weekend__name {
@@ -445,8 +456,9 @@ div.postContent {
 .questions > img{
 	position: absolute;
 	right: 0;
-	top: 25px;
+	top: 40%;
 	margin-right: 10px;
+	width: 10%;
 }
 
 .questions2 {
@@ -594,21 +606,20 @@ div.has-error > div.help-block {
 }
 
 .libraryWord {
-	font-size: 32px;
+	font-size: 20px;
 	text-align: left;
 	margin: 10px 0 8px 16px;
 }
 
 .libraryInput {
 	width: 80%;
-	height: 50px;
+	height: 40px;
 	float: inherit;	
 }
 
 .libraryLoop {
-	height: 50px;
+	height: 40px;
 	float: right;
-	margin-top: 4px;
 }
 
 .library > span {
@@ -618,11 +629,12 @@ div.has-error > div.help-block {
 }
 
 .library > span#name {
-	font-size: 28px;
+	font-size: 20px;
+	margin-bottom: 10px;
 }
 
 .library > span#A-Z {
-	font-size: 40px;
+	font-size: 20px;
 	font-weight: bold;
 	color: #6b6966;
 }

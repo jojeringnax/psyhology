@@ -39,7 +39,8 @@ $(document).ready( function() {
 
     $('.moreAboutQuest').click( function() {
         $.ajax({
-            url: 'question/view?id='+$(this).data('id'),
+            url: 'question/view',
+            data:'id='+$(this).data('id'),
             dataType: 'html',
             error: function(xhr, textStatus) {
                 $('#modalQuest > .modal-dialog > .modal-content > .modal-body').html([ xhr.status, textStatus ]);

@@ -44,7 +44,12 @@ use yii\widgets\ActiveForm;
 		<div class="container-fluid">
 			<div class="row" style="height: 60px; background-color: #e5e5e5;">
 				<div class="hidden-xs hidden-sm col-md-3 col-lg-3" style="margin-top:20px;">
-					<img src="img/letter.png" style="height: 20px; float:left; margin-left: 14%;" />
+					<input type="image" name="picture" src="img/letter.png" style="height: 20px; float:left; margin-left: 14%;" >
+					<!-- <input type="submit" name="img"> -->
+					<!-- <img src="img/letter.png" style="height: 20px; float:left; margin-left: 14%;" /> -->
+<!-- 					<a href="#" onClick="document.send.submit();"> 
+						<img src="img/letter.png" style="height: 20px; float:left; margin-left: 14%;" name="send" border="0" />
+					</a> -->
 					
 					<?php $form = ActiveForm::begin([
 						'validateOnChange' => true,
@@ -88,7 +93,7 @@ use yii\widgets\ActiveForm;
 								<?php ActiveForm::end(); ?>
 						<?php Modal::end() ?>
 
-						<img src="img/questions.png" height="200" />
+						<img src="img/questions.png"/>
 					</div>
 				</div>
 				<div class="hidden-xs hidden-sm col-md-2 col-lg-2">
@@ -127,7 +132,7 @@ use yii\widgets\ActiveForm;
             </div>
         </div>
 <div class="container-fluid">
-    <div class="row" style="background-color: #afaeae; height: 150px; padding: 5px 0 5px 0;">
+    <div class="row" style="background-color: #afaeae; height: 137px; padding: 5px 0 5px 0;">
         <form>
             <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
                 <div class="libraryWord"><span class="libraryWord">БИБЛИОТЕКА</span></div>

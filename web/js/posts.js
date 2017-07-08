@@ -1,6 +1,5 @@
 $(document).ready( function() {
 	var colors = ['#079', '#59a', '#da5', '#9ba', '#da8800', '#865', '#b9967a', '#367'];
-	$('.postImg.img').height($('.small').width());
 	$(function() {
 		$.colorification = function() {
             $('.postContent').each( function() {
@@ -23,6 +22,9 @@ $(document).ready( function() {
 					$(this).html('<img class="postTypeImg" src="/img/pic/' + $(this).data('type') + '.png" \/>');
 				});
 			});
+			var postImg = $('.postImg');
+			var postImgImg = $('.postImg > img');
+			postImgImg.css('margin-top' , (postImg.height() - postImgImg.width())/2);
 		}
 	});
 
@@ -43,5 +45,6 @@ $(document).ready( function() {
 	$('.description').each(function() {
 		$(this).css('top', $(this).data('margin')*20 + 'px');
 	});
+
 
 });

@@ -59,7 +59,8 @@ $(document).ready( function() {
 			$('span.opened').data('value', value).html(value).removeClass('opened').addClass('choosen');
 
 			$.ajax({
-				url: 'library?letter='+value+'&type='+type,
+				url: 'library',
+				data: {'letter': value, 'type': type},
 				dataType: 'html',
 				success: function(data) {
 					var choosenSpan = $('span.choosen');

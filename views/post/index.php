@@ -19,8 +19,8 @@ $moths_rus = array(
 ?>
 <div class="container-fluid">
     <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3" >
-            <div class="calendar hidden-xs hidden-sm" style="width: 80%; height: 300px; margin: 0 auto;">
+        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3" style="padding-right: 0;">
+            <div class="calendar hidden-xs hidden-sm" style="width: 85%; height: 300px; margin: 0 auto;">
                 <div class="monthName"><?= $moths_rus[date('F')] ?></div>
                 <div class="calendBody">
                     <?php
@@ -44,7 +44,7 @@ $moths_rus = array(
             </div>
             <div class="tags hidden-xs hidden-sm" style="width: 40%; height: 300px; margin: 0 auto; background-color: #ccc;">Тэги</div>
         </div>
-        <div class="hidden-xs hidden-sm col-md-9 col-lg-9" >
+        <div class="hidden-xs hidden-sm col-md-9 col-lg-9" style="padding-left: 0;">
             <div class="posts" style="height: 570px;">
                 <?php
                 $array = array('large', 'small', 'large', 'small', 'large');
