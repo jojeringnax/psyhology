@@ -1,3 +1,5 @@
+
+
 input[name="img"] {
     background-image:transparent url('img/letter.png') no-repeat center top;
     height: 20px; 
@@ -685,6 +687,20 @@ h1.letter {
 div.letter {
 	height: 38px;
 }
+
+/*
+
+АДМИНКА
+
+*/
+
+.captionAdmin {
+	font-size: 20px;
+	text-align: center;
+    height: 60px;
+    padding-top: 15px;
+}
+
 /* 
 
 АНОНСЫ
@@ -745,4 +761,14 @@ div.loop > form > input {
 	float: left;
 	padding: 0;	
 	border: none;
+}
+/*-------------------------------media-------------------------------*/
+@media (max-width: 990px){
+    .headerPic > img {
+    position: absolute;
+    width: 20%;
+    left: 30%;
+    top: 15%;
+    height: 20%;
+    }
 }
