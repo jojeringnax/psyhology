@@ -2,6 +2,11 @@
 $this->title = $post->title;
 
 use app\models\Postviews;
+use yii\helpers\Html;
+use yii\bootstrap\ActiveForm;
+use yii\data\ArrayDataProvider;
+use yii\widgets\ListView;
+use app\models\Comment;
 
 ?>
 
@@ -27,16 +32,6 @@ p.help-block {
 </div>
 <hr>
 
-<?php
-
-/* @var $this yii\web\View */
-
-use yii\helpers\Html;
-use yii\bootstrap\ActiveForm;
-use yii\data\ArrayDataProvider;
-use yii\widgets\ListView;
-use app\models\Comment;
-?>
 <div class="site-comments">
 
     <?php
@@ -117,12 +112,8 @@ use app\models\Comment;
     </p>
 </div>
 
-<?php 
-        $lines = file('access.log');
-        $line = $lines[count($lines)-1];
-        $start = 0;
-        $finish = strpos($line, ' - - ');
-        $IP = substr($line, $start, $finish);
+<?php
+        $IP = Yii::$app->request->userIP;
         
                         
        
