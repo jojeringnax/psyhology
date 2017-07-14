@@ -2,11 +2,6 @@
 $this->title = $post->title;
 
 use app\models\Postviews;
-use yii\helpers\Html;
-use yii\bootstrap\ActiveForm;
-use yii\data\ArrayDataProvider;
-use yii\widgets\ListView;
-use app\models\Comment;
 
 ?>
 
@@ -32,6 +27,16 @@ p.help-block {
 </div>
 <hr>
 
+<?php
+
+/* @var $this yii\web\View */
+
+use yii\helpers\Html;
+use yii\bootstrap\ActiveForm;
+use yii\data\ArrayDataProvider;
+use yii\widgets\ListView;
+use app\models\Comment;
+?>
 <div class="site-comments">
 
     <?php
@@ -112,8 +117,14 @@ p.help-block {
     </p>
 </div>
 
-<?php
-        $IP = Yii::$app->request->userIP;
+<?php 
+        $lines = file('access.log');
+        $line = $lines[count($lines)-1];
+        $start = 0;
+        $finish = strpos($line, ' - - ');
+        $IP = substr($line, $start, $finish);
+        
+                        
        
         if(!(Postviews::find()->where('IP = "'.$IP.'"')->all()) || !(Postviews::find()->where('postId = '.$post->id)->all())) {
             $postView = new Postviews;
