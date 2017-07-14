@@ -114,8 +114,6 @@ p.help-block {
 
 <?php
         $IP = Yii::$app->request->userIP;
-        
-                        
        
         if(!(Postviews::find()->where('IP = "'.$IP.'"')->all()) || !(Postviews::find()->where('postId = '.$post->id)->all())) {
             $postView = new Postviews;
