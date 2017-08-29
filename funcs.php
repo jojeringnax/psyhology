@@ -1,4 +1,10 @@
 <?php
+
+	
+    function quoting($string) {
+        return "\"$string\"";
+    }
+
 	function draw_calendar($month, $year, $fillSpaces = false, $specials = [], $action = 'none') {
 		$calendar = '<table cellpadding="0" cellspacing="0" class="b-calendar__tb">';
 		

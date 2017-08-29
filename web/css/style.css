@@ -285,6 +285,10 @@ div.small > img {
 	margin-left: 6px;
 }
 
+.postTags {
+	position: absolute;
+}
+
 .postNew {
 	color: red;
 	width: 10%;

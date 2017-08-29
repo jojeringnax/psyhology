@@ -35,7 +35,9 @@ $this->params['breadcrumbs'][] = $this->title;
             'timestamp',
             'views',
             'commentsQuan',
+            'tags',
         ],
-    ]) ?>
+    ])
+    ?>
 
 </div>

@@ -1,6 +1,15 @@
 $(document).ready( function() {
-	var colors = ['#079', '#59a', '#da5', '#9ba', '#da8800', '#865', '#b9967a', '#367'];
-	$(function() {
+	var colors = [
+	 //'#079', //darkblue
+	 '#59a', //lightblue
+     '#da5', //lightorange
+     '#9ba', //lightgreen
+     //'#da8800', //brighrorange
+     //'#865', //brown-ish
+     '#b9967a', //lightbrown
+     //'#367' //darkblue-ish
+    ];
+    $(function() {
 		$.colorification = function() {
             $('.postContent').each( function() {
                 $(this).height(104 - $(this).parent('.post').children('.postTitle').height());

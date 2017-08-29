@@ -10,10 +10,11 @@ use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
 use yii\widgets\ActiveForm;
 use app\models\SearchForm;
-
+use Yii;
 AppAsset::register($this);
 ?>
-<?php $this->beginPage() ?>
+<?php $this->beginPage(); ?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -22,16 +23,16 @@ AppAsset::register($this);
 			div {text-align: center;}
 		</style>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<link rel="stylesheet" href="/css/latofonts.css" />
-		<link rel="stylesheet" href="/css/bootstrap.min.css" />
-		<link rel="stylesheet" href="/css/bootstrap-theme.min.css" />
-		<link rel="stylesheet" href="/css/style.css" />
+		<link rel="stylesheet" href="<?= Yii::$app->params['webRoot']; ?>css/latofonts.css" />
+		<link rel="stylesheet" href="<?= Yii::$app->params['webRoot']; ?>css/bootstrap.min.css" />
+		<link rel="stylesheet" href="<?= Yii::$app->params['webRoot']; ?>css/bootstrap-theme.min.css" />
+		<link rel="stylesheet" href="<?= Yii::$app->params['webRoot']; ?>css/style.css" />
 		<title><?= Html::encode($this->title) ?></title>
-		<script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
-		<script type="text/javascript" src="/js/questions.js"></script>
-		<script type="text/javascript" src="/js/library.js"></script>
-		<script type="text/javascript" src="/js/main.js"></script>
-		<script type="text/javascript" src="/js/posts.js"></script>
+		<script type="text/javascript" src="<?= Yii::$app->params['webRoot']; ?>js/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript" src="<?= Yii::$app->params['webRoot']; ?>js/questions.js"></script>
+		<script type="text/javascript" src="<?= Yii::$app->params['webRoot']; ?>js/library.js"></script>
+		<script type="text/javascript" src="<?= Yii::$app->params['webRoot']; ?>js/main.js"></script>
+		<script type="text/javascript" src="<?= Yii::$app->params['webRoot']; ?>js/posts.js"></script>
 	</head>
 	<body>
 <?php $this->beginBody() ?>
@@ -47,10 +48,10 @@ AppAsset::register($this);
 		<div class="col-xs-6 col-sm-6 col-md-8 col-lg-8"></div>
 		<div class="col-xs-2 col-sm-2 hidden-md hidden-lg new mobile">new</div>
 		<div class="col-xs-2 col-sm-2 hidden-md hidden-lg loop mobile">
-			<img class="headerLoop" src="/img/loop.png" /><input type="text" style="width: 0;" />
+			<img class="headerLoop" src="<?= Yii::$app->params['webRoot']; ?>img/loop.png" /><input type="text" style="width: 0;" />
 		</div>
 		<div class="col-xs-2 col-sm-2 hidden-md hidden-lg letter mobile">
-			<img src="/img/letter.png" />
+			<img src="<?= Yii::$app->params['webRoot']; ?>img/letter.png" />
 		</div>
 		<div class="hidden-xs hidden-sm col-md-4 col-lg-4">
 			<div class="row"> <!-- Это строка с лупой и конвертом -->
@@ -82,7 +83,7 @@ AppAsset::register($this);
 					
 					<?= $form->field($searchForm, 'q', ['template' => '{input}'])->textInput(array('placeholder' => 'Поиск', 'style'=>'width: 100%; margin-right: 5%;', 'class' => ''))->label(''); ?><?= Html::submitButton('', ['class' => 'headerInputSubmit']) ?>
 					<?php ActiveForm::end(); ?>
-					<img class="headerLoop" src="/img/loop.png" width="10%" style="margin-right: 20px; float: right;" />
+					<img class="headerLoop" src="<?= Yii::$app->params['webRoot']; ?>img/loop.png" width="10%" style="margin-right: 20px; float: right;" />
 				</div>
 			</div>
 		</div>
@@ -98,9 +99,9 @@ AppAsset::register($this);
 	<div class="row"> <!-- Это строка с картинкой главной -->
 		<div class="col-xs-2 col-sm-2 col-md-5 col-lg-5"></div>
 		<div class="col-xs-8 col-sm-8 col-md-2 col-lg-2 headerPic">
-			<img src="/img/header/header_pic_1.png" class="header1" style="z-index: 34;" width="100%"/>
-            <img src="/img/header/header_pic_2.png" class="header2" style="z-index: 33;" width="100%"/>
-            <img src="/img/header/header_pic_3.png" class="header3" style="z-index: 32;" width="100%"/>
+			<img src="<?= Yii::$app->params['webRoot']; ?>img/header/header_pic_1.png" class="header1" style="z-index: 34;" width="100%"/>
+            <img src="<?= Yii::$app->params['webRoot']; ?>img/header/header_pic_2.png" class="header2" style="z-index: 33;" width="100%"/>
+            <img src="<?= Yii::$app->params['webRoot']; ?>img/header/header_pic_3.png" class="header3" style="z-index: 32;" width="100%"/>
 		</div>
 		<div class="col-xs-2 col-sm-2 col-md-5 col-lg-5"></div>
 	</div>
@@ -132,7 +133,7 @@ AppAsset::register($this);
 			<form class="footerForm">
 				<div class="row">
 					<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
-						<img src="/img/letter.png" width="100%" />
+						<img src="<?= Yii::$app->params['webRoot']; ?>img/letter.png" width="100%" />
 					</div>
 					<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
 						<input type="submit" value="ПОДПИСАТЬСЯ" style="width: 100%; background-color: transparent; border: none; color:white; text-decoration: none; font-style: normal; font-size: 17px;" />

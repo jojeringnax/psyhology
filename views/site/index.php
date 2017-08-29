@@ -77,7 +77,7 @@ use yii\widgets\ActiveForm;
         ]) ?>
 		<div class="container-fluid">
 			<div class="row" style="height: 250px; background-color: #201600;">
-				<div class="hidden-xs hidden-sm col-md-4 col-lg-4">
+				<div class="hidden-xs col-sm-4 col-md-4 col-lg-4">
 					<div class="questions" style="color: white;">
 						<span style="margin-left: 20px; float: left; margin-bottom: 20px;" data-target="#questForm" data-toggle="modal"> ЗАДАЙТЕ ВОПРОС:</span>
 						<?php Modal::begin([
@@ -96,12 +96,12 @@ use yii\widgets\ActiveForm;
 						<img src="img/questions.png"/>
 					</div>
 				</div>
-				<div class="hidden-xs hidden-sm col-md-2 col-lg-2">
+				<div class="hidden-xs col-sm-2 col-md-2 col-lg-2">
 					<div class="questions2" style="color: white; text-align: left;">
 						<span style="font-size: 12px;" ><p><i>ПРАВИЛА</i></p><i>Если Вы хотите писать, то надо:<br />зачем терпеть проверка связи снова<br />и теперь никогда не проходит с<br />возрастом и приходится увергать<br />эей эейи гей и теперь и заново<br />верить...</i></span>
 					</div>
 				</div>
-				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+				<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
 					<div class="questionsSlider" style="color:white">
 						<div class="row sliderQuest">
 							<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 leftQuest"><img class="questArrow left" src="/img/pic/left.png" /></div>

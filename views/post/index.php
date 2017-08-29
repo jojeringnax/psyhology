@@ -1,6 +1,7 @@
 <?php
 use yii\helpers\Html;
 use yii\helpers\Url;
+use Yii;
 
 $moths_rus = array(
         'January' => 'Январь',
@@ -68,7 +69,7 @@ $moths_rus = array(
                         }
                     }
                     if ($i==2 and $j==1) {
-                        echo("<div class=\"postImg small\"><img src=\"img\\rabbit.png\" \\></div>");
+                        echo('<div class="postImg small"><img src="'.Yii::$app->params['webRoot'].'img/rabbit.png" \></div>');
 
                     } elseif ($i < 5) {
                     echo("<div class=\"post $array[$i]\" data-id=\"$post->id\" >");
@@ -85,7 +86,10 @@ $moths_rus = array(
                     </div>
                     <div class="postTitle"><a href="<?= Url::to(['post/view', 'id' => $post->id]) ?>"><?= $post->title ?></a></div>
                     <div class="postContent"><?= substr($post->content, 0, strpos($post->content, ' ', 150)); ?></div>
-                    <div class="postViews"><img src="/img/pic/views.png" /><?php echo($post->views); ?></div>
+                    <div class="postViews"><img src="<?= Yii::$app->params['webRoot']?>/img/pic/views.png" /><?php echo($post->views); ?></div>
+                    <?php $tags = split(',', str_replace(' ', '', $post->tags)); ?>
+                    <div class="postTags">
+                    <?php print_r($tags); ?></div>
                     <div class="postCommentsQuan"><img src="/img/pic/comment.png" />
                         <?php echo($post->commentsQuan);?>
                     </div>
