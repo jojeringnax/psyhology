@@ -38,7 +38,6 @@ class CommentForm extends Model
         if ($this->validate()) {
             $comment = new Comment;
             $postId = \Yii::$app->request->get('id');
-            $post = Post::findOne($postId);
 
             $nickSafe = htmlspecialchars($this->nick, ENT_QUOTES, "UTF-8");
             $emailSafe = htmlspecialchars($this->email, ENT_QUOTES, "UTF-8");
@@ -49,8 +48,6 @@ class CommentForm extends Model
             $comment->body = $bodySafe;
             $comment->postId = $postId;
             $comment->save();
-            $post->commentsQuan = $post->commentsQuan + 1;
-            $post->save();
             return true;
         }
         return false;

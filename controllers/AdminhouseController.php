@@ -3,19 +3,16 @@
 namespace app\controllers;
 
 use Yii;
-use app\models\Post;
-use app\models\Tag;
-use app\models\PostTags;
-use app\models\PostSearch;
-use yii\helpers\ArrayHelper;
+use app\models\House;
+use app\models\HouseSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * AdminController implements the CRUD actions for Post model.
+ * AdminhouseController implements the CRUD actions for House model.
  */
-class AdminController extends Controller
+class AdminhouseController extends Controller
 {
     /**
      * @inheritdoc
@@ -33,106 +30,92 @@ class AdminController extends Controller
     }
 
     /**
-     * Lists all Post models.
+     * Lists all House models.
      * @return mixed
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $searchModel = new HouseSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+        return $this->render('index', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ]);
     }
 
     /**
-     * Displays a single Post model.
+     * Displays a single House model.
      * @param integer $id
      * @return mixed
      */
     public function actionView($id)
     {
-        return $this->render('posts/view', [
+        return $this->render('view', [
             'model' => $this->findModel($id),
         ]);
     }
 
     /**
-     * Creates a new Post model.
+     * Creates a new House model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Post();
-        $tags = Tag::find()->all();
+        $model = new House();
+
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
-            return $this->render('posts/create', [
+            return $this->render('create', [
                 'model' => $model,
-                'tags' => $tags,
             ]);
         }
     }
 
     /**
-     * Updates an existing Post model.
+     * Updates an existing House model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
      */
     public function actionUpdate($id)
     {
-
         $model = $this->findModel($id);
-        $tags = Tag::find()->all();
+
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
-            return $this->render('posts/update', [
+            return $this->render('update', [
                 'model' => $model,
-                'tags' => $tags,
             ]);
         }
     }
 
     /**
-     * Deletes an existing Post model.
+     * Deletes an existing House model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
      */
-
-    public function beforeAction($action)
-    {
-            $this->enableCsrfValidation = false;
-        return parent::beforeAction($action);
-    }
-
     public function actionDelete($id)
     {
-        $this->enableCsrfValidation = false;
         $this->findModel($id)->delete();
-        return $this->redirect(['admin/posts']);
+
+        return $this->redirect(['index']);
     }
 
-    public function actionPosts() 
-    {
-        $searchModel = new PostSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-
-        return $this->render('posts/index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
-        ]);
-    }
     /**
-     * Finds the Post model based on its primary key value.
+     * Finds the House model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Post the loaded model
+     * @return House the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Post::findOne($id)) !== null) {
+        if (($model = House::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');

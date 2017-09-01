@@ -41,11 +41,11 @@ use app\models\Comment;
 
     <?php
     
-    $comments = Comment::find()->select('nick, body, email, timestamp')->where('postId = '.$post->id)->all();
+    $comments = $post->getComments();
     
     ?>
 
-    <?php 
+    <?php
     $provider = new ArrayDataProvider([
         'allModels' => $comments,
         'pagination' => [
@@ -66,7 +66,7 @@ use app\models\Comment;
             'emptyText' => 'Увы, пока комментариев не было. Станьте первым!'
         ])
     ?>
-    
+
     
     <p>
         <span>Отправить комментарий:</span>

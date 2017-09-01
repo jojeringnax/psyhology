@@ -17,12 +17,12 @@ if($authors) {
 	echo '<div class="letter"><h1 class="letter">'.$letter.'</h1></div>';
 	foreach ($authors as $author) {
 		if ($author->name) {
-			$shortName = substr($author->name, 0, 2).'.';
+			$shortName = substr($author->name, 0, 1).'.';
 		} else {
 			$shortName = '';
 		}
 		if ($author->midname) {
-			$shortMidName = substr($author->midname, 0, 2).'.';
+			$shortMidName = substr($author->midname, 0, 1).'.';
 		} else {
 			$shortMidName = '';
 		}

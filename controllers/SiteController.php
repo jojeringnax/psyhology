@@ -123,8 +123,8 @@ class SiteController extends Controller
         
         if ($signupForm->load($request->post()) && $signupForm->post() || $questionForm->load($request->post()) && $questionForm->post()) {
             return $this->refresh();
-		}		
-		
+		}
+
 		$posts = Post::find()->orderBy('id')->all();
 		$quests = Question::find()->orderBy('id')->where('answerBody is not null')->all();
         $activities = Activity::find()->orderBy('id')->all();

@@ -14,10 +14,7 @@ class PostController extends Controller
      */
     public function actionIndex()
     {
-        $posts = Post::find()->all();
-        return $this->renderPartial('index', [
-            'posts' => $posts,
-        ]);
+        return $this->renderPartial('index');
     }
     
     public function actionView()

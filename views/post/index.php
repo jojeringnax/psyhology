@@ -1,8 +1,7 @@
 <?php
+
 use yii\helpers\Html;
 use yii\helpers\Url;
-use Yii;
-
 $moths_rus = array(
         'January' => 'Январь',
         'February' => 'Февраль',
@@ -57,7 +56,13 @@ $moths_rus = array(
                 };
                 ?>
                 <div class="postRow">
-                    <?php foreach ($posts as $post):
+                    <?php
+                    $counter = 0;
+                    foreach ($posts as $post):
+                    if($counter == 15) {
+                        break;
+                    }
+                    $counter++;
                     $i++;
                     if ($i == 5) {
                         $i=0;
@@ -86,11 +91,10 @@ $moths_rus = array(
                     </div>
                     <div class="postTitle"><a href="<?= Url::to(['post/view', 'id' => $post->id]) ?>"><?= $post->title ?></a></div>
                     <div class="postContent"><?= substr($post->content, 0, strpos($post->content, ' ', 150)); ?></div>
-                    <div class="postViews"><img src="<?= Yii::$app->params['webRoot']?>/img/pic/views.png" /><?php echo($post->views); ?></div>
-                    <?php $tags = split(',', str_replace(' ', '', $post->tags)); ?>
-                    <div class="postTags">
-                    <?php print_r($tags); ?></div>
-                    <div class="postCommentsQuan"><img src="/img/pic/comment.png" />
+                    <div class="postViews"><img src="<?= Yii::$app->params['webRoot']?>img/pic/views.png" /><?php echo($post->views); ?></div>
+                    <?php $tags = preg_split('/,/', str_replace(' ', '', $post->tags)); ?>
+                    <div class="postTags"><?= $post->tags ?></div>
+                    <div class="postCommentsQuan"><img src="<?= Yii::$app->params['webRoot']?>img/pic/comment.png" />
                         <?php echo($post->commentsQuan);?>
                     </div>
                 </div>
