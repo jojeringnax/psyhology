@@ -14,6 +14,7 @@
     },
     "minimum-stability": "stable",
     "require": {
+        "yii2tech/ar-file": "*",
         "php": ">=5.4.0",
         "yiisoft/yii2": "~2.0.5",
         "yiisoft/yii2-bootstrap": "~2.0.0",
